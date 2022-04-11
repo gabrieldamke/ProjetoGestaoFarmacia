@@ -7,8 +7,11 @@ namespace ProjetoGestaoFarmacia
         [STAThread]
         static void Main()
         {
-            Farmacia farmacia = new Farmacia();
+            Farmacia farmacia = new Farmacia(1, "a", "a", "a","a","a","a");
             Console.WriteLine(farmacia.endereco);
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form1());
         }
     }
 }
