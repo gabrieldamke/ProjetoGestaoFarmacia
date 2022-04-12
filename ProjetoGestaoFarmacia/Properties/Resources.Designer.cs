@@ -79,5 +79,15 @@ namespace ProjetoGestaoFarmacia.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pngtreecute_little_male_doctor_5548167 {
+            get {
+                object obj = ResourceManager.GetObject("Pngtreecute little male doctor_5548167", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

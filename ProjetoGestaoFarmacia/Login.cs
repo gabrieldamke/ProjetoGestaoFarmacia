@@ -11,12 +11,17 @@ using System.Windows.Forms;
 namespace ProjetoGestaoFarmacia
 {
     public partial class Login : Form
+        
     {
+
+
+
         public Login()
         {
             InitializeComponent();
+         
         }
-
+      
         private void Login_Load(object sender, EventArgs e)
         {
 
@@ -40,6 +45,44 @@ namespace ProjetoGestaoFarmacia
         private void BotaoFechar_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void BotaoRegistrar_Click(object sender, EventArgs e)
+        {
+            Registrar1 TelaRegistro = new Registrar1();
+            this.Hide();
+            TelaRegistro.ShowDialog();
+            
         }
     }
 }
