@@ -19,20 +19,27 @@ namespace ProjetoGestaoFarmacia
         int r = 252;
         int g = 240;
         int b = 240;
+        int r2 = 70;
+        int g2 = 130;
+        int b2 = 180;
+
 
         private void Registrar2_Load(object sender, EventArgs e)
         {
-     
+
 
             this.BackColor = Color.FromArgb(r, g, b);
             timerR.Start();
+            timerNext.Start();
         }
-
+        // 1ª instância de mudança de cor 
         private void timerR_Tick(object sender, EventArgs e)
         {
             g += 5;
-            this.BackColor =  Color.FromArgb(r, g, b);
-            if (g >=252)
+            g2 += 5;
+            this.BackColor = Color.FromArgb(r, g, b);
+            label5.ForeColor = Color.FromArgb(r2, g2, b2);
+            if (g >= 252 || g2 >= 252)
             {
                 timerR.Stop();
                 timerG.Start();
@@ -40,9 +47,11 @@ namespace ProjetoGestaoFarmacia
         }
         private void timerG_Tick(object sender, EventArgs e)
         {
-            r -= 5;
-            this.BackColor =  Color.FromArgb(r, g, b);
-            if (r <= 3)
+            r = r - 5;
+            r2 = r2 + 5;
+            this.BackColor = Color.FromArgb(r, g, b);
+            label5.ForeColor = Color.FromArgb(r2, g2, b2);
+            if (r <= 3 || r2 >= 240)
             {
                 timerG.Stop();
                 timerB.Start();
@@ -52,12 +61,28 @@ namespace ProjetoGestaoFarmacia
         private void timerB_Tick(object sender, EventArgs e)
         {
             b += 5;
-            this.BackColor  = Color.FromArgb(r, g, b);
-           if (b >= 240)
+            b2 += 5;
+            this.BackColor = Color.FromArgb(r, g, b);
+            label5.ForeColor = Color.FromArgb(r2, g2, b2);
+            if (b >= 240 || b2 >= 240)
             {
                 timerB.Stop();
-               // timerG.Start();
-            } 
+
+            }
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timerNext_Tick(object sender, EventArgs e)
+        {
+            Registrar3 SeguirRegistro = new Registrar3();
+            timerNext.Stop();
+            Hide();
+            SeguirRegistro.ShowDialog();
+           
         }
     }
 }

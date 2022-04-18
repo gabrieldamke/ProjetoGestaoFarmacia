@@ -33,6 +33,7 @@
             this.timerR = new System.Windows.Forms.Timer(this.components);
             this.timerG = new System.Windows.Forms.Timer(this.components);
             this.timerB = new System.Windows.Forms.Timer(this.components);
+            this.timerNext = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // label5
@@ -40,11 +41,12 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label5.Location = new System.Drawing.Point(55, 217);
+            this.label5.Location = new System.Drawing.Point(50, 143);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(658, 42);
             this.label5.TabIndex = 6;
             this.label5.Text = "Estamos preparando tudo para você";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // timerR
             // 
@@ -62,11 +64,16 @@
             this.timerB.Interval = 40;
             this.timerB.Tick += new System.EventHandler(this.timerB_Tick);
             // 
+            // timerNext
+            // 
+            this.timerNext.Interval = 4000;
+            this.timerNext.Tick += new System.EventHandler(this.timerNext_Tick);
+            // 
             // Registrar2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(750, 530);
+            this.ClientSize = new System.Drawing.Size(750, 330);
             this.Controls.Add(this.label5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Registrar2";
@@ -84,5 +91,6 @@
         private System.Windows.Forms.Timer timerR;
         private System.Windows.Forms.Timer timerG;
         private System.Windows.Forms.Timer timerB;
+        private System.Windows.Forms.Timer timerNext;
     }
 }

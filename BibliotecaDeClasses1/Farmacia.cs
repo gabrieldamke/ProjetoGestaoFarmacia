@@ -12,17 +12,16 @@ public class Farmacia
         public string Nome { get; set; } = "";
         public string Telefone { get; set; } = "";
         public string RazaoSocial { get; set; } = "";
-        public string NomeFantasia { get; set; } = "";
+       
         public string cnpj { get; set; } = "";
         public string endereco { get; set; } = "";
 
-        public Farmacia(int id, string nome, string telefone, string razaoSocial, string nomeFantasia, string cnpj, string endereco)
+        public Farmacia(int id, string nome, string telefone, string razaoSocial, string cnpj, string endereco)
         {
             Id = id;
             Nome = nome;
             Telefone = telefone;
             RazaoSocial = razaoSocial;
-            NomeFantasia = nomeFantasia;
             this.cnpj = cnpj;
             this.endereco = endereco;
         }

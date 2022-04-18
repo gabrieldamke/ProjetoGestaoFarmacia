@@ -1,8 +1,7 @@
 {
   "profiles": {
     "ProjetoGestaoFarmacia": {
-      "commandName": "Project",
-      "workingDirectory": "C:\\Users\\gabri\\Desktop\\Meus Arquivos\\UTFPR"
+      "commandName": "Project"
     }
   }
 }
