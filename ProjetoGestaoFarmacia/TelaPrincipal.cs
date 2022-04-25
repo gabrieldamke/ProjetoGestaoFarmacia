@@ -26,5 +26,12 @@ namespace ProjetoGestaoFarmacia
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ConsultarMedicamento Consulta = new ConsultarMedicamento();
+            Hide();
+            Consulta.ShowDialog();
+        }
     }
 }

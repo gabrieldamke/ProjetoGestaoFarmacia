@@ -46,6 +46,7 @@
             this.InserirEmail = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BotaoRegistrar = new System.Windows.Forms.Button();
+            this.StatusLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel7.SuspendLayout();
@@ -139,6 +140,7 @@
             this.InserirUsuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.InserirUsuario.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.InserirUsuario.Location = new System.Drawing.Point(47, 12);
+            this.InserirUsuario.MaxLength = 54;
             this.InserirUsuario.Name = "InserirUsuario";
             this.InserirUsuario.PlaceholderText = "Seu nome";
             this.InserirUsuario.Size = new System.Drawing.Size(323, 20);
@@ -187,6 +189,7 @@
             this.InserirSenha.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.InserirSenha.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.InserirSenha.Location = new System.Drawing.Point(46, 10);
+            this.InserirSenha.MaxLength = 49;
             this.InserirSenha.Name = "InserirSenha";
             this.InserirSenha.PlaceholderText = "Crie uma senha";
             this.InserirSenha.Size = new System.Drawing.Size(315, 20);
@@ -220,6 +223,7 @@
             this.InserirEmail.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.InserirEmail.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.InserirEmail.Location = new System.Drawing.Point(46, 10);
+            this.InserirEmail.MaxLength = 59;
             this.InserirEmail.Name = "InserirEmail";
             this.InserirEmail.PlaceholderText = "Seu Email";
             this.InserirEmail.Size = new System.Drawing.Size(315, 20);
@@ -242,13 +246,24 @@
             this.BotaoRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BotaoRegistrar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BotaoRegistrar.ForeColor = System.Drawing.Color.White;
-            this.BotaoRegistrar.Location = new System.Drawing.Point(486, 269);
+            this.BotaoRegistrar.Location = new System.Drawing.Point(488, 282);
             this.BotaoRegistrar.Name = "BotaoRegistrar";
             this.BotaoRegistrar.Size = new System.Drawing.Size(148, 39);
             this.BotaoRegistrar.TabIndex = 10;
             this.BotaoRegistrar.Text = "Prosseguir";
             this.BotaoRegistrar.UseVisualStyleBackColor = false;
             this.BotaoRegistrar.Click += new System.EventHandler(this.BotaoRegistrar_Click);
+            // 
+            // StatusLabel
+            // 
+            this.StatusLabel.AutoSize = true;
+            this.StatusLabel.ForeColor = System.Drawing.Color.Red;
+            this.StatusLabel.Location = new System.Drawing.Point(374, 256);
+            this.StatusLabel.Name = "StatusLabel";
+            this.StatusLabel.Size = new System.Drawing.Size(67, 15);
+            this.StatusLabel.TabIndex = 11;
+            this.StatusLabel.Text = "StatusLabel";
+            this.StatusLabel.Visible = false;
             // 
             // Registrar1
             // 
@@ -257,6 +272,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(750, 530);
             this.ControlBox = false;
+            this.Controls.Add(this.StatusLabel);
             this.Controls.Add(this.BotaoRegistrar);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel6);
@@ -305,5 +321,6 @@
         private Label label2;
         private Label label6;
         private Label label7;
+        private Label StatusLabel;
     }
 }

@@ -35,6 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.StatusLabel = new System.Windows.Forms.Label();
             this.BotaoRegistrar = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -135,6 +136,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.StatusLabel);
             this.panel2.Controls.Add(this.BotaoRegistrar);
             this.panel2.Controls.Add(this.panel8);
             this.panel2.Controls.Add(this.panel6);
@@ -150,6 +152,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(385, 533);
             this.panel2.TabIndex = 2;
+            // 
+            // StatusLabel
+            // 
+            this.StatusLabel.AutoSize = true;
+            this.StatusLabel.ForeColor = System.Drawing.Color.Red;
+            this.StatusLabel.Location = new System.Drawing.Point(10, 506);
+            this.StatusLabel.Name = "StatusLabel";
+            this.StatusLabel.Size = new System.Drawing.Size(67, 15);
+            this.StatusLabel.TabIndex = 15;
+            this.StatusLabel.Text = "StatusLabel";
+            this.StatusLabel.Visible = false;
             // 
             // BotaoRegistrar
             // 
@@ -495,5 +508,6 @@
         private CheckBox checkBox2;
         private PictureBox pictureBox7;
         private Button BotaoRegistrar;
+        private Label StatusLabel;
     }
 }
