@@ -43,7 +43,7 @@
             this.InserirSenha = new System.Windows.Forms.TextBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.InserirEmail = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BotaoRegistrar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -206,24 +206,24 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.Control;
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.InserirEmail);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Location = new System.Drawing.Point(368, 208);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(383, 45);
             this.panel2.TabIndex = 9;
             // 
-            // textBox1
+            // InserirEmail
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.textBox1.Location = new System.Drawing.Point(46, 10);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PlaceholderText = "Seu Email";
-            this.textBox1.Size = new System.Drawing.Size(315, 20);
-            this.textBox1.TabIndex = 6;
+            this.InserirEmail.BackColor = System.Drawing.SystemColors.Control;
+            this.InserirEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.InserirEmail.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.InserirEmail.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.InserirEmail.Location = new System.Drawing.Point(46, 10);
+            this.InserirEmail.Name = "InserirEmail";
+            this.InserirEmail.PlaceholderText = "Seu Email";
+            this.InserirEmail.Size = new System.Drawing.Size(315, 20);
+            this.InserirEmail.TabIndex = 6;
             // 
             // pictureBox1
             // 
@@ -298,7 +298,7 @@
         private TextBox InserirSenha;
         private PictureBox pictureBox4;
         private Panel panel2;
-        private TextBox textBox1;
+        private TextBox InserirEmail;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private Button BotaoRegistrar;

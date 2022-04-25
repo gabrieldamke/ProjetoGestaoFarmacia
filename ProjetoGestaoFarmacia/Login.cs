@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -83,6 +84,39 @@ namespace ProjetoGestaoFarmacia
             this.Hide();
             TelaRegistro.ShowDialog();
             
+        }
+
+        private void BotaoEntrar_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=DB_IdealFarma;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            try
+            {
+                if (connection.State == ConnectionState.Closed)
+                    connection.Open();
+                String check = "select count(*) from [TB_FARMACEUTICO] where farmaceutico_email = '" + InserirUsuario.Text + "' and farmaceutico_senha = '" + InserirSenha.Text + "' ";
+                SqlCommand command = new SqlCommand (check, connection);
+                int aux = Convert.ToInt32(command.ExecuteScalar().ToString());
+                connection.Close();
+                if (aux == 1)
+                {
+                    TelaPrincipal telaPrincipal = new TelaPrincipal();
+                    this.Hide();
+                    telaPrincipal.ShowDialog();
+                    label8.Visible = false;
+                } else
+                {
+                    label8.Visible=true;
+                    label8.Text = "Dados incorretos.";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
         }
     }
 }

@@ -22,7 +22,15 @@ namespace ProjetoGestaoFarmacia
         int r2 = 70;
         int g2 = 130;
         int b2 = 180;
-
+        public string Nome = "";
+        public string Senha = "";
+        public string Email = "";
+        public Registrar2(string nome, string senha, string email) : this()
+        {
+            this.Nome = nome;
+            this.Senha = senha;
+            this.Email = email;
+        }
 
         private void Registrar2_Load(object sender, EventArgs e)
         {
@@ -78,7 +86,7 @@ namespace ProjetoGestaoFarmacia
 
         private void timerNext_Tick(object sender, EventArgs e)
         {
-            Registrar3 SeguirRegistro = new Registrar3();
+            Registrar3 SeguirRegistro = new Registrar3(Nome, Senha, Email);
             timerNext.Stop();
             Hide();
             SeguirRegistro.ShowDialog();

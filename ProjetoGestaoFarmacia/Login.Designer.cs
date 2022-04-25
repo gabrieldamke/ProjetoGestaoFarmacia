@@ -58,6 +58,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.BotaoFechar = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -172,6 +173,7 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.label8);
             this.panel5.Controls.Add(this.BotaoEsquecerSenha);
             this.panel5.Controls.Add(this.BotaoRegistrar);
             this.panel5.Controls.Add(this.BotaoEntrar);
@@ -229,6 +231,7 @@
             this.BotaoEntrar.TabIndex = 7;
             this.BotaoEntrar.Text = "Entrar";
             this.BotaoEntrar.UseVisualStyleBackColor = false;
+            this.BotaoEntrar.Click += new System.EventHandler(this.BotaoEntrar_Click);
             // 
             // panel6
             // 
@@ -281,7 +284,7 @@
             this.InserirUsuario.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.InserirUsuario.Location = new System.Drawing.Point(55, 10);
             this.InserirUsuario.Name = "InserirUsuario";
-            this.InserirUsuario.PlaceholderText = "Insira seu usuário";
+            this.InserirUsuario.PlaceholderText = "Insira seu email";
             this.InserirUsuario.Size = new System.Drawing.Size(370, 20);
             this.InserirUsuario.TabIndex = 5;
             // 
@@ -420,6 +423,17 @@
             this.BotaoFechar.UseVisualStyleBackColor = true;
             this.BotaoFechar.Click += new System.EventHandler(this.BotaoFechar_Click);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.Red;
+            this.label8.Location = new System.Drawing.Point(244, 349);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(67, 15);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "StatusLabel";
+            this.label8.Visible = false;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -488,5 +502,6 @@
         private Button button3;
         private Label label7;
         private Label label6;
+        private Label label8;
     }
 }

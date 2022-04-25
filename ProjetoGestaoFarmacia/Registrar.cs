@@ -34,9 +34,10 @@ namespace ProjetoGestaoFarmacia
 
         private void BotaoRegistrar_Click(object sender, EventArgs e)
         {
-            Registrar2 TelaSplash = new Registrar2();
+            Registrar2 TelaSplash = new Registrar2(InserirUsuario.Text, InserirSenha.Text, InserirEmail.Text);
             this.Hide();
             TelaSplash.ShowDialog();
+            
             
         }
     }

@@ -12,16 +12,16 @@ public class Medicamento
         public string nome { get; set; } = "";
         public bool ReceitaMedica { get; set; }
         public float valor { get; set; }
-        public DateTime DataValidade { get; set; }
+        public string DtValidade { get; set; }
         public int quantidade { get; set; }
 
-        public Medicamento(int id, string nome, bool receitaMedica, float valor, DateTime dataValidade, int quantidade)
+        public Medicamento(int id, string nome, bool receitaMedica, float valor, string dataValidade, int quantidade)
         {
             this.id = id;
             this.nome = nome;
             ReceitaMedica = receitaMedica;
             this.valor = valor;
-            DataValidade = dataValidade;
+            DtValidade = dataValidade;
             this.quantidade = quantidade;
         }
     }

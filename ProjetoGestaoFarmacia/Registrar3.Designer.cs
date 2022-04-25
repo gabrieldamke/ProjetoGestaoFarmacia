@@ -134,7 +134,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.BotaoRegistrar);
             this.panel2.Controls.Add(this.panel8);
             this.panel2.Controls.Add(this.panel6);
@@ -164,6 +164,7 @@
             this.BotaoRegistrar.TabIndex = 14;
             this.BotaoRegistrar.Text = "Prosseguir";
             this.BotaoRegistrar.UseVisualStyleBackColor = false;
+            this.BotaoRegistrar.Click += new System.EventHandler(this.BotaoRegistrar_Click);
             // 
             // panel8
             // 
@@ -387,6 +388,7 @@
             this.InserirTelefone.PlaceholderText = "Seu Telefone";
             this.InserirTelefone.Size = new System.Drawing.Size(323, 20);
             this.InserirTelefone.TabIndex = 5;
+            this.InserirTelefone.TextChanged += new System.EventHandler(this.InserirTelefone_TextChanged);
             // 
             // label4
             // 
