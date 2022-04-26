@@ -38,8 +38,8 @@
             this.StatusLabel = new System.Windows.Forms.Label();
             this.BotaoRegistrar = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.SouFuncionario = new System.Windows.Forms.CheckBox();
+            this.CriarNovaFarmacia = new System.Windows.Forms.CheckBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.Feminino = new System.Windows.Forms.CheckBox();
@@ -132,6 +132,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // panel2
             // 
@@ -152,6 +153,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(385, 533);
             this.panel2.TabIndex = 2;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // StatusLabel
             // 
@@ -182,33 +184,33 @@
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.LemonChiffon;
-            this.panel8.Controls.Add(this.checkBox1);
-            this.panel8.Controls.Add(this.checkBox2);
+            this.panel8.Controls.Add(this.SouFuncionario);
+            this.panel8.Controls.Add(this.CriarNovaFarmacia);
             this.panel8.Controls.Add(this.pictureBox7);
             this.panel8.Location = new System.Drawing.Point(0, 363);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(385, 45);
             this.panel8.TabIndex = 13;
             // 
-            // checkBox1
+            // SouFuncionario
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(56, 23);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(264, 19);
-            this.checkBox1.TabIndex = 9;
-            this.checkBox1.Text = "Sou funcionário de uma empresa cadastrada.";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.SouFuncionario.AutoSize = true;
+            this.SouFuncionario.Location = new System.Drawing.Point(56, 23);
+            this.SouFuncionario.Name = "SouFuncionario";
+            this.SouFuncionario.Size = new System.Drawing.Size(264, 19);
+            this.SouFuncionario.TabIndex = 9;
+            this.SouFuncionario.Text = "Sou funcionário de uma empresa cadastrada.";
+            this.SouFuncionario.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // CriarNovaFarmacia
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(56, 5);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(129, 19);
-            this.checkBox2.TabIndex = 8;
-            this.checkBox2.Text = "Criar nova farmácia";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.CriarNovaFarmacia.AutoSize = true;
+            this.CriarNovaFarmacia.Location = new System.Drawing.Point(56, 5);
+            this.CriarNovaFarmacia.Name = "CriarNovaFarmacia";
+            this.CriarNovaFarmacia.Size = new System.Drawing.Size(129, 19);
+            this.CriarNovaFarmacia.TabIndex = 8;
+            this.CriarNovaFarmacia.Text = "Criar nova farmácia";
+            this.CriarNovaFarmacia.UseVisualStyleBackColor = true;
             // 
             // pictureBox7
             // 
@@ -365,6 +367,7 @@
             this.InserirEndereco.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.InserirEndereco.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.InserirEndereco.Location = new System.Drawing.Point(47, 12);
+            this.InserirEndereco.MaxLength = 49;
             this.InserirEndereco.Name = "InserirEndereco";
             this.InserirEndereco.PlaceholderText = "Seu Endereço";
             this.InserirEndereco.Size = new System.Drawing.Size(323, 20);
@@ -397,6 +400,7 @@
             this.InserirTelefone.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.InserirTelefone.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.InserirTelefone.Location = new System.Drawing.Point(47, 12);
+            this.InserirTelefone.MaxLength = 19;
             this.InserirTelefone.Name = "InserirTelefone";
             this.InserirTelefone.PlaceholderText = "Seu Telefone";
             this.InserirTelefone.Size = new System.Drawing.Size(323, 20);
@@ -504,8 +508,8 @@
         private CheckBox Masculino;
         private PictureBox pictureBox6;
         private Panel panel8;
-        private CheckBox checkBox1;
-        private CheckBox checkBox2;
+        private CheckBox SouFuncionario;
+        private CheckBox CriarNovaFarmacia;
         private PictureBox pictureBox7;
         private Button BotaoRegistrar;
         private Label StatusLabel;

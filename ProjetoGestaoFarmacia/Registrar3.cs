@@ -73,21 +73,48 @@ namespace ProjetoGestaoFarmacia
                 StatusLabel.Visible = true;
                 StatusLabel.Text = ("Por favor escolha o seu gênero");
                 }
-            if (!Regex.Match(InserirTelefone.Text, "(?:[14689][1-9]|2[12478]|3[1234578]|5[1345]|7[134579])").Success)
+            if (InserirRG.Text == "" || InserirTelefone.Text == "" || InserirEndereco.Text == "")
+            {
+                StatusLabel.Visible = true;
+                StatusLabel.Text = "Existe campos vazios. Por favor preencha!";
+            }
+            else if (!Regex.Match(InserirTelefone.Text, "(?:[14689][1-9]|2[12478]|3[1234578]|5[1345]|7[134579])").Success)
             {
                 StatusLabel.Visible = true;
                 StatusLabel.Text = "Insira seu telefone no formato (xx) 9xxxx-xxxx";
             }
-
-            /*
-        string connectionString = ConfigurationManager.ConnectionStrings["IdealFarma"].ConnectionString;
-        Farmaceutico farmaceutico = new Farmaceutico(Nome, Email, Senha, InserirEndereco.Text, InserirTelefone.Text, InserirRG.Text, 0, DataNasc.Value.ToString(), "", Genero, "");
-        FarmaceuticoDAL dal = new FarmaceuticoDAL(new SqlConnection(connectionString));
-        dal.Inserir1(farmaceutico);
-        */
+            if (!Regex.Match(InserirRG.Text, "(?:[14689][1-9]|2[12478]|3[1234578]|5[1345]|7[134579])").Success)
+            {
+                StatusLabel.Visible = true;
+                StatusLabel.Text = "RG Incorreto. Por Favor verifique.";
+            }
+            else
+            {
+                string connectionString = ConfigurationManager.ConnectionStrings["IdealFarma"].ConnectionString;
+                Farmaceutico farmaceutico = new Farmaceutico(Nome, Email, Senha, InserirEndereco.Text, InserirTelefone.Text, InserirRG.Text, 0, DataNasc.Value.ToString(), "", Genero, "");
+                FarmaceuticoDAL dal = new FarmaceuticoDAL(new SqlConnection(connectionString));
+                dal.Inserir1(farmaceutico);
+            }
+            
+            if (CriarNovaFarmacia.Checked)
+            {
+               CadastrarFarmacia cadastrarFarmacia = new CadastrarFarmacia();
+                this.Hide();
+                cadastrarFarmacia.ShowDialog();
+            }
         }
 
         private void InserirTelefone_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
 
         }

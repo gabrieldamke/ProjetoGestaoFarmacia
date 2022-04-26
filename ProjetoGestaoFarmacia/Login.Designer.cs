@@ -38,7 +38,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.BotaoEsquecerSenha = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
             this.BotaoRegistrar = new System.Windows.Forms.Button();
             this.BotaoEntrar = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -58,7 +58,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.BotaoFechar = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -174,7 +173,6 @@
             // panel5
             // 
             this.panel5.Controls.Add(this.label8);
-            this.panel5.Controls.Add(this.BotaoEsquecerSenha);
             this.panel5.Controls.Add(this.BotaoRegistrar);
             this.panel5.Controls.Add(this.BotaoEntrar);
             this.panel5.Controls.Add(this.panel6);
@@ -189,19 +187,16 @@
             this.panel5.TabIndex = 8;
             this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
-            // BotaoEsquecerSenha
+            // label8
             // 
-            this.BotaoEsquecerSenha.BackColor = System.Drawing.Color.White;
-            this.BotaoEsquecerSenha.FlatAppearance.BorderSize = 0;
-            this.BotaoEsquecerSenha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BotaoEsquecerSenha.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BotaoEsquecerSenha.ForeColor = System.Drawing.Color.SteelBlue;
-            this.BotaoEsquecerSenha.Location = new System.Drawing.Point(38, 343);
-            this.BotaoEsquecerSenha.Name = "BotaoEsquecerSenha";
-            this.BotaoEsquecerSenha.Size = new System.Drawing.Size(154, 28);
-            this.BotaoEsquecerSenha.TabIndex = 9;
-            this.BotaoEsquecerSenha.Text = "Esqueci minha senha";
-            this.BotaoEsquecerSenha.UseVisualStyleBackColor = false;
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.Red;
+            this.label8.Location = new System.Drawing.Point(244, 349);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(67, 15);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "StatusLabel";
+            this.label8.Visible = false;
             // 
             // BotaoRegistrar
             // 
@@ -423,17 +418,6 @@
             this.BotaoFechar.UseVisualStyleBackColor = true;
             this.BotaoFechar.Click += new System.EventHandler(this.BotaoFechar_Click);
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(244, 349);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(67, 15);
-            this.label8.TabIndex = 10;
-            this.label8.Text = "StatusLabel";
-            this.label8.Visible = false;
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -489,7 +473,6 @@
         private TextBox textBox2;
         private Button button1;
         private Panel panel5;
-        private Button BotaoEsquecerSenha;
         private Button BotaoRegistrar;
         private Button BotaoEntrar;
         private Panel panel6;

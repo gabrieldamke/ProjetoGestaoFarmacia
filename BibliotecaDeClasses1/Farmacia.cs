@@ -25,5 +25,14 @@ public class Farmacia
             this.cnpj = cnpj;
             this.endereco = endereco;
         }
+
+        public Farmacia(string nome, string telefone, string razaoSocial, string cnpj, string endereco)
+        {
+            Nome = nome;
+            Telefone = telefone;
+            RazaoSocial = razaoSocial;
+            this.cnpj = cnpj;
+            this.endereco = endereco;
+        }
     }
 }

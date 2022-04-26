@@ -35,14 +35,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.StatusLabel = new System.Windows.Forms.Label();
             this.BotaoRegistrar = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.InserirTelefone = new System.Windows.Forms.TextBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.InserirRazaoSocial = new System.Windows.Forms.TextBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.InserirRG = new System.Windows.Forms.TextBox();
+            this.InserirCNPJ = new System.Windows.Forms.TextBox();
             this.BotaoFechar = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -53,8 +56,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
@@ -81,6 +82,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(370, 533);
             this.panel1.TabIndex = 2;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label7
             // 
@@ -128,6 +130,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.panel2.Controls.Add(this.StatusLabel);
             this.panel2.Controls.Add(this.BotaoRegistrar);
             this.panel2.Controls.Add(this.panel6);
             this.panel2.Controls.Add(this.panel5);
@@ -142,6 +145,18 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(391, 533);
             this.panel2.TabIndex = 3;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // StatusLabel
+            // 
+            this.StatusLabel.AutoSize = true;
+            this.StatusLabel.ForeColor = System.Drawing.Color.Red;
+            this.StatusLabel.Location = new System.Drawing.Point(3, 375);
+            this.StatusLabel.Name = "StatusLabel";
+            this.StatusLabel.Size = new System.Drawing.Size(67, 15);
+            this.StatusLabel.TabIndex = 15;
+            this.StatusLabel.Text = "StatusLabel";
+            this.StatusLabel.Visible = false;
             // 
             // BotaoRegistrar
             // 
@@ -156,16 +171,30 @@
             this.BotaoRegistrar.TabIndex = 14;
             this.BotaoRegistrar.Text = "Finalizar Cadastro";
             this.BotaoRegistrar.UseVisualStyleBackColor = false;
+            this.BotaoRegistrar.Click += new System.EventHandler(this.BotaoRegistrar_Click);
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.LemonChiffon;
-            this.panel6.Controls.Add(this.textBox2);
+            this.panel6.Controls.Add(this.InserirTelefone);
             this.panel6.Controls.Add(this.pictureBox6);
             this.panel6.Location = new System.Drawing.Point(0, 312);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(385, 45);
             this.panel6.TabIndex = 12;
+            // 
+            // InserirTelefone
+            // 
+            this.InserirTelefone.BackColor = System.Drawing.Color.LemonChiffon;
+            this.InserirTelefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.InserirTelefone.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.InserirTelefone.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.InserirTelefone.Location = new System.Drawing.Point(40, 12);
+            this.InserirTelefone.MaxLength = 20;
+            this.InserirTelefone.Name = "InserirTelefone";
+            this.InserirTelefone.PlaceholderText = "O telefone da sua farmácia";
+            this.InserirTelefone.Size = new System.Drawing.Size(323, 20);
+            this.InserirTelefone.TabIndex = 9;
             // 
             // pictureBox6
             // 
@@ -180,12 +209,25 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.LemonChiffon;
-            this.panel5.Controls.Add(this.textBox1);
+            this.panel5.Controls.Add(this.InserirRazaoSocial);
             this.panel5.Controls.Add(this.pictureBox4);
             this.panel5.Location = new System.Drawing.Point(0, 261);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(385, 45);
             this.panel5.TabIndex = 11;
+            // 
+            // InserirRazaoSocial
+            // 
+            this.InserirRazaoSocial.BackColor = System.Drawing.Color.LemonChiffon;
+            this.InserirRazaoSocial.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.InserirRazaoSocial.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.InserirRazaoSocial.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.InserirRazaoSocial.Location = new System.Drawing.Point(40, 12);
+            this.InserirRazaoSocial.MaxLength = 30;
+            this.InserirRazaoSocial.Name = "InserirRazaoSocial";
+            this.InserirRazaoSocial.PlaceholderText = "A razão social da sua farmácia";
+            this.InserirRazaoSocial.Size = new System.Drawing.Size(323, 20);
+            this.InserirRazaoSocial.TabIndex = 8;
             // 
             // pictureBox4
             // 
@@ -201,7 +243,7 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.LemonChiffon;
             this.panel4.Controls.Add(this.pictureBox3);
-            this.panel4.Controls.Add(this.InserirRG);
+            this.panel4.Controls.Add(this.InserirCNPJ);
             this.panel4.Location = new System.Drawing.Point(0, 210);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(385, 45);
@@ -217,17 +259,18 @@
             this.pictureBox3.TabIndex = 7;
             this.pictureBox3.TabStop = false;
             // 
-            // InserirRG
+            // InserirCNPJ
             // 
-            this.InserirRG.BackColor = System.Drawing.Color.LemonChiffon;
-            this.InserirRG.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.InserirRG.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.InserirRG.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.InserirRG.Location = new System.Drawing.Point(47, 12);
-            this.InserirRG.Name = "InserirRG";
-            this.InserirRG.PlaceholderText = "O CNPJ da sua farmácia";
-            this.InserirRG.Size = new System.Drawing.Size(323, 20);
-            this.InserirRG.TabIndex = 5;
+            this.InserirCNPJ.BackColor = System.Drawing.Color.LemonChiffon;
+            this.InserirCNPJ.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.InserirCNPJ.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.InserirCNPJ.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.InserirCNPJ.Location = new System.Drawing.Point(47, 12);
+            this.InserirCNPJ.MaxLength = 30;
+            this.InserirCNPJ.Name = "InserirCNPJ";
+            this.InserirCNPJ.PlaceholderText = "O CNPJ da sua farmácia";
+            this.InserirCNPJ.Size = new System.Drawing.Size(323, 20);
+            this.InserirCNPJ.TabIndex = 5;
             // 
             // BotaoFechar
             // 
@@ -271,6 +314,7 @@
             this.InserirEndereco.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.InserirEndereco.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.InserirEndereco.Location = new System.Drawing.Point(47, 12);
+            this.InserirEndereco.MaxLength = 50;
             this.InserirEndereco.Name = "InserirEndereco";
             this.InserirEndereco.PlaceholderText = "O endereço da sua farmácia";
             this.InserirEndereco.Size = new System.Drawing.Size(323, 20);
@@ -303,6 +347,7 @@
             this.InserirNome.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.InserirNome.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.InserirNome.Location = new System.Drawing.Point(47, 12);
+            this.InserirNome.MaxLength = 50;
             this.InserirNome.Name = "InserirNome";
             this.InserirNome.PlaceholderText = "O nome da sua farmácia";
             this.InserirNome.Size = new System.Drawing.Size(323, 20);
@@ -340,30 +385,6 @@
             this.label1.Size = new System.Drawing.Size(289, 24);
             this.label1.TabIndex = 4;
             this.label1.Text = "Vamos cadastrar os dados ";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.LemonChiffon;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.textBox1.Location = new System.Drawing.Point(40, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PlaceholderText = "A razão social da sua farmácia";
-            this.textBox1.Size = new System.Drawing.Size(323, 20);
-            this.textBox1.TabIndex = 8;
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.LemonChiffon;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.textBox2.Location = new System.Drawing.Point(40, 12);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PlaceholderText = "O telefone da sua farmácia";
-            this.textBox2.Size = new System.Drawing.Size(323, 20);
-            this.textBox2.TabIndex = 9;
             // 
             // CadastrarFarmacia
             // 
@@ -411,14 +432,14 @@
         private Panel panel2;
         private Button BotaoRegistrar;
         private Panel panel6;
-        private TextBox textBox2;
+        private TextBox InserirTelefone;
         private PictureBox pictureBox6;
         private Panel panel5;
-        private TextBox textBox1;
+        private TextBox InserirRazaoSocial;
         private PictureBox pictureBox4;
         private Panel panel4;
         private PictureBox pictureBox3;
-        private TextBox InserirRG;
+        private TextBox InserirCNPJ;
         private Button BotaoFechar;
         private Panel panel3;
         private PictureBox pictureBox1;
@@ -429,5 +450,6 @@
         private Label label4;
         private Label label3;
         private Label label1;
+        private Label StatusLabel;
     }
 }
