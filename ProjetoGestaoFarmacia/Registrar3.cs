@@ -20,6 +20,7 @@ namespace ProjetoGestaoFarmacia
         public string Nome = "";
         public string Senha = "";
         public string Email = "";
+        public int aux = 0;
         public Registrar3()
         {
             InitializeComponent();
@@ -52,6 +53,8 @@ namespace ProjetoGestaoFarmacia
         //Farmaceutico(int id, string nome, string email, string senha, string endereco, string rg, float salario, String dtNasc, string pis, string genero, string crf)
         private void BotaoRegistrar_Click(object sender, EventArgs e)
         {
+
+            SqlConnection connection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=DB_IdealFarma;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
             StatusLabel.Visible = false;
             string Genero = "";
             //valida gênero, define valor para enviar para DB
@@ -60,19 +63,19 @@ namespace ProjetoGestaoFarmacia
                 StatusLabel.Visible = true;
                 StatusLabel.Text = ("Você não pode escolher dois gêneros");
             }
-           else if (Masculino.Checked)
-                {
-                    Genero = "Masculino";
-                }
-                else if (Feminino.Checked)
-                {
-                    Genero = "Feminino";
-                }
-                else if (!Masculino.Checked && !Feminino.Checked)
-                {
+            else if (Masculino.Checked)
+            {
+                Genero = "Masculino";
+            }
+            else if (Feminino.Checked)
+            {
+                Genero = "Feminino";
+            }
+            else if (!Masculino.Checked && !Feminino.Checked)
+            {
                 StatusLabel.Visible = true;
                 StatusLabel.Text = ("Por favor escolha o seu gênero");
-                }
+            }
             if (InserirRG.Text == "" || InserirTelefone.Text == "" || InserirEndereco.Text == "")
             {
                 StatusLabel.Visible = true;
@@ -83,24 +86,84 @@ namespace ProjetoGestaoFarmacia
                 StatusLabel.Visible = true;
                 StatusLabel.Text = "Insira seu telefone no formato (xx) 9xxxx-xxxx";
             }
-            if (!Regex.Match(InserirRG.Text, "(?:[14689][1-9]|2[12478]|3[1234578]|5[1345]|7[134579])").Success)
+            else if (!Regex.Match(InserirRG.Text, "(?:[14689][1-9]|2[12478]|3[1234578]|5[1345]|7[134579])").Success)
             {
                 StatusLabel.Visible = true;
                 StatusLabel.Text = "RG Incorreto. Por Favor verifique.";
             }
+            else if (!Masculino.Checked && !Feminino.Checked)
+            {
+                StatusLabel.Visible = true;
+                StatusLabel.Text = ("Por favor escolha o seu gênero");
+            }
             else
             {
                 string connectionString = ConfigurationManager.ConnectionStrings["IdealFarma"].ConnectionString;
-                Farmaceutico farmaceutico = new Farmaceutico(Nome, Email, Senha, InserirEndereco.Text, InserirTelefone.Text, InserirRG.Text, 0, DataNasc.Value.ToString(), "", Genero, "");
+                Farmaceutico farmaceutico = new Farmaceutico(Nome, Email, Senha, InserirEndereco.Text, InserirTelefone.Text, InserirRG.Text, 0, DataNasc.Value.ToString(), "", Genero, "", 0);
                 FarmaceuticoDAL dal = new FarmaceuticoDAL(new SqlConnection(connectionString));
-                dal.Inserir1(farmaceutico);
+                connection.Open();
+                if (aux <= 0) { 
+                dal.Inserir2(farmaceutico);
+                    aux = aux + 1;
             }
-            
-            if (CriarNovaFarmacia.Checked)
-            {
-               CadastrarFarmacia cadastrarFarmacia = new CadastrarFarmacia();
-                this.Hide();
-                cadastrarFarmacia.ShowDialog();
+            String ObterIdFarmaceuticoQuery = "SELECT * FROM TB_FARMACEUTICO WHERE farmaceutico_id = (SELECT MAX(farmaceutico_id) FROM TB_FARMACEUTICO)";
+                SqlCommand commandRequestIdFarmaceutico = new SqlCommand(ObterIdFarmaceuticoQuery, connection);
+                int IdNovoFarmaceutico = (int)commandRequestIdFarmaceutico.ExecuteScalar();
+                connection.Close();
+                if (CriarNovaFarmacia.Checked && SouFuncionario.Checked)
+                {
+                    StatusLabel.Visible = true;
+                    StatusLabel.Text = "Você não pode ser funcionário e criar uma nova farmácia";
+                }
+                else if (!CriarNovaFarmacia.Checked && !SouFuncionario.Checked)
+                {
+                    StatusLabel.Visible = true;
+                    StatusLabel.Text = "Você deve escolher se é funcionário ou deseja criar uma nova farmácia.";
+                }
+                else if (CriarNovaFarmacia.Checked)
+                {
+                    CadastrarFarmacia cadastrarFarmacia = new CadastrarFarmacia(Nome, Senha);
+                    this.Hide();
+                    cadastrarFarmacia.ShowDialog();
+                }
+                else if (SouFuncionario.Checked)
+                {
+                    EscolherFarmaciaCadastro escolherFarmaciaCadastro = new EscolherFarmaciaCadastro();
+                    escolherFarmaciaCadastro.ShowDialog();
+
+                    connection.Open();
+
+                    /*   String ObterIdFarmaceuticoFarmaciaQuery = "SELECT farmaceutico_farmacia FROM TB_FARMACEUTICO WHERE farmaceutico_id = (SELECT MAX(farmaceutico_id) FROM TB_FARMACEUTICO)";
+                    SqlCommand commandRequestIdFarmaceuticoFarmacia = new SqlCommand(ObterIdFarmaceuticoFarmaciaQuery, connection);
+                    int IdNovoFarmaceuticoFarmacia = (int)commandRequestIdFarmaceuticoFarmacia.ExecuteScalar();
+
+                        */
+
+                    String VerificarFarmaciaEstaCadastradaQuery = "SELECT * FROM TB_FARMACEUTICO WHERE farmaceutico_id = '" + IdNovoFarmaceutico + "' and farmaceutico_farmacia = '" + 0 + "' ";
+                    SqlCommand commandVerificarFarmaciaExiste = new SqlCommand(VerificarFarmaciaEstaCadastradaQuery, connection);
+
+                    SqlDataReader reader = commandVerificarFarmaciaExiste.ExecuteReader();
+
+
+                    if (reader.HasRows)
+                    {
+                        StatusLabel.Visible = true;
+                        StatusLabel.Text = "Você deve escolher uma farmácia ou cadastrar uma nova.";
+                    }
+                    else
+                    {
+                        TelaPrincipal telaPrincipal = new TelaPrincipal(IdNovoFarmaceutico);
+                        this.Hide();
+                        telaPrincipal.ShowDialog();
+                    }
+                    connection.Close();
+                }
+                /*
+                    TelaPrincipal telaPrincipal = new TelaPrincipal(IdNovoFarmaceutico);
+                    this.Hide();
+                    telaPrincipal.ShowDialog();
+                */
+
             }
         }
 
@@ -115,6 +178,16 @@ namespace ProjetoGestaoFarmacia
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CriarNovaFarmacia_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SouFuncionario_CheckedChanged(object sender, EventArgs e)
         {
 
         }

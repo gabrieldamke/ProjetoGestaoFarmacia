@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using ProjetoGestaoFarmacia.DAL;
 namespace ProjetoGestaoFarmacia
 {
     public partial class Login : Form
@@ -99,7 +99,12 @@ namespace ProjetoGestaoFarmacia
                 connection.Close();
                 if (aux == 1)
                 {
-                    TelaPrincipal telaPrincipal = new TelaPrincipal();
+                    connection.Open();
+                    String PassarIdAux = "select farmaceutico_id from [TB_FARMACEUTICO] where farmaceutico_email = '" + InserirUsuario.Text + "' and farmaceutico_senha = '" + InserirSenha.Text + "' ";
+                    SqlCommand command2 = new SqlCommand(PassarIdAux, connection);
+                    int PassarId = (int)command2.ExecuteScalar();
+                    TelaPrincipal telaPrincipal = new TelaPrincipal(PassarId);
+                    connection.Close();
                     this.Hide();
                     telaPrincipal.ShowDialog();
                     label8.Visible = false;
@@ -117,6 +122,17 @@ namespace ProjetoGestaoFarmacia
             {
                 connection.Close();
             }
+        }
+        public void Alert(string msg, Form_Alert.enmType type)
+        {
+            Form_Alert frm = new Form_Alert();
+            frm.showAlert(msg, type);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Alert("Pedro vai pega dp kkk", Form_Alert.enmType.Info);
+
         }
     }
 }

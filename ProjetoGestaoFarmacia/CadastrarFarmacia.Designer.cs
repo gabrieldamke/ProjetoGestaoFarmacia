@@ -223,7 +223,7 @@
             this.InserirRazaoSocial.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.InserirRazaoSocial.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.InserirRazaoSocial.Location = new System.Drawing.Point(40, 12);
-            this.InserirRazaoSocial.MaxLength = 30;
+            this.InserirRazaoSocial.MaxLength = 50;
             this.InserirRazaoSocial.Name = "InserirRazaoSocial";
             this.InserirRazaoSocial.PlaceholderText = "A razão social da sua farmácia";
             this.InserirRazaoSocial.Size = new System.Drawing.Size(323, 20);
@@ -352,6 +352,7 @@
             this.InserirNome.PlaceholderText = "O nome da sua farmácia";
             this.InserirNome.Size = new System.Drawing.Size(323, 20);
             this.InserirNome.TabIndex = 5;
+            this.InserirNome.TextChanged += new System.EventHandler(this.InserirNome_TextChanged);
             // 
             // label4
             // 

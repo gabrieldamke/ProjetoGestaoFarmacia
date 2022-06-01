@@ -58,6 +58,8 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.BotaoFechar = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -172,6 +174,8 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.label9);
+            this.panel5.Controls.Add(this.button2);
             this.panel5.Controls.Add(this.label8);
             this.panel5.Controls.Add(this.BotaoRegistrar);
             this.panel5.Controls.Add(this.BotaoEntrar);
@@ -418,6 +422,27 @@
             this.BotaoFechar.UseVisualStyleBackColor = true;
             this.BotaoFechar.Click += new System.EventHandler(this.BotaoFechar_Click);
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button2.Location = new System.Drawing.Point(38, 390);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(105, 63);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "TestButton";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.Red;
+            this.label9.Location = new System.Drawing.Point(24, 463);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(38, 15);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "label9";
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -486,5 +511,7 @@
         private Label label7;
         private Label label6;
         private Label label8;
+        private Button button2;
+        private Label label9;
     }
 }

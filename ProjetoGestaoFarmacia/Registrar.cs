@@ -72,5 +72,10 @@ namespace ProjetoGestaoFarmacia
             }
 
         }
+
+        private void InserirEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -2,6 +2,7 @@ using BibliotecaDeClasses1;
 using ProjetoGestaoFarmacia.DAL;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Diagnostics;
 
 namespace ProjetoGestaoFarmacia
 {
@@ -11,6 +12,7 @@ namespace ProjetoGestaoFarmacia
         [STAThread]
         static void Main()
         {
+            SqlConnection connection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=DB_IdealFarma;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             /*
@@ -20,11 +22,12 @@ namespace ProjetoGestaoFarmacia
             dal.Inserir1(farmaceutico);
             */
             Application.Run(new Login());
-            
+  
 
-           
-            
-          
+
+
+
+
         }
     }
 }

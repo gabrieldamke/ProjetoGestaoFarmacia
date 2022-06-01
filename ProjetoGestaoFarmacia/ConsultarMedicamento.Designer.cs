@@ -128,7 +128,7 @@
             this.ConsultaMedicamento.BackColor = System.Drawing.Color.Red;
             this.ConsultaMedicamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ConsultaMedicamento.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ConsultaMedicamento.Location = new System.Drawing.Point(305, 133);
+            this.ConsultaMedicamento.Location = new System.Drawing.Point(261, 116);
             this.ConsultaMedicamento.Name = "ConsultaMedicamento";
             this.ConsultaMedicamento.Size = new System.Drawing.Size(344, 59);
             this.ConsultaMedicamento.TabIndex = 2;
@@ -138,7 +138,7 @@
             // 
             // InserirMedicamento
             // 
-            this.InserirMedicamento.Location = new System.Drawing.Point(156, 104);
+            this.InserirMedicamento.Location = new System.Drawing.Point(132, 87);
             this.InserirMedicamento.Name = "InserirMedicamento";
             this.InserirMedicamento.PlaceholderText = "                                     Inserir o nome do Medicamento ou deixe em br" +
     "anco para consultar todos";

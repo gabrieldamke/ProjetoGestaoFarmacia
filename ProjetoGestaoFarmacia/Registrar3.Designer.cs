@@ -159,7 +159,7 @@
             // 
             this.StatusLabel.AutoSize = true;
             this.StatusLabel.ForeColor = System.Drawing.Color.Red;
-            this.StatusLabel.Location = new System.Drawing.Point(10, 506);
+            this.StatusLabel.Location = new System.Drawing.Point(3, 506);
             this.StatusLabel.Name = "StatusLabel";
             this.StatusLabel.Size = new System.Drawing.Size(67, 15);
             this.StatusLabel.TabIndex = 15;
@@ -201,6 +201,7 @@
             this.SouFuncionario.TabIndex = 9;
             this.SouFuncionario.Text = "Sou funcionário de uma empresa cadastrada.";
             this.SouFuncionario.UseVisualStyleBackColor = true;
+            this.SouFuncionario.CheckedChanged += new System.EventHandler(this.SouFuncionario_CheckedChanged);
             // 
             // CriarNovaFarmacia
             // 
@@ -211,6 +212,7 @@
             this.CriarNovaFarmacia.TabIndex = 8;
             this.CriarNovaFarmacia.Text = "Criar nova farmácia";
             this.CriarNovaFarmacia.UseVisualStyleBackColor = true;
+            this.CriarNovaFarmacia.CheckedChanged += new System.EventHandler(this.CriarNovaFarmacia_CheckedChanged);
             // 
             // pictureBox7
             // 

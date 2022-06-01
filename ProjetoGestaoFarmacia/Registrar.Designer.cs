@@ -117,11 +117,11 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label5.Location = new System.Drawing.Point(414, 60);
+            this.label5.Location = new System.Drawing.Point(414, 61);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(261, 24);
+            this.label5.Size = new System.Drawing.Size(302, 24);
             this.label5.TabIndex = 5;
-            this.label5.Text = "Vamos iniciar o cadastro";
+            this.label5.Text = "Vamos iniciar o seu cadastro";
             // 
             // panel7
             // 
@@ -228,6 +228,7 @@
             this.InserirEmail.PlaceholderText = "Seu Email";
             this.InserirEmail.Size = new System.Drawing.Size(315, 20);
             this.InserirEmail.TabIndex = 6;
+            this.InserirEmail.TextChanged += new System.EventHandler(this.InserirEmail_TextChanged);
             // 
             // pictureBox1
             // 
