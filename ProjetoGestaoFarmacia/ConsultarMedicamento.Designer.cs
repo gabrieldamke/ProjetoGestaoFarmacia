@@ -28,64 +28,84 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.BotaoFechar = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.TabelaMedicamentos = new System.Windows.Forms.DataGridView();
-            this.ConsultaMedicamento = new System.Windows.Forms.Button();
-            this.InserirMedicamento = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TabelaMedicamentos)).BeginInit();
+            this.InserirMedicamento = new System.Windows.Forms.TextBox();
+            this.MedicamentosTable = new System.Windows.Forms.DataGridView();
+            this.BotaoConsultar = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.BotaoSelecionar = new System.Windows.Forms.Button();
+            this.BotaoFechar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.MedicamentosTable)).BeginInit();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label7
+            // label1
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label7.Location = new System.Drawing.Point(98, 63);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(179, 24);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "com excelência";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(158, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(268, 24);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Consultar Medicamentos";
             // 
-            // label6
+            // InserirMedicamento
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label6.Location = new System.Drawing.Point(0, 39);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(277, 24);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "A gestão da sua farmácia";
+            this.InserirMedicamento.Location = new System.Drawing.Point(3, 12);
+            this.InserirMedicamento.Name = "InserirMedicamento";
+            this.InserirMedicamento.PlaceholderText = "Insira o nome do medicamento ou deixe em branco para consultar todos";
+            this.InserirMedicamento.Size = new System.Drawing.Size(393, 23);
+            this.InserirMedicamento.TabIndex = 1;
             // 
-            // label2
+            // MedicamentosTable
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.Cyan;
-            this.label2.Location = new System.Drawing.Point(37, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(196, 39);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "IdealFarma";
+            this.MedicamentosTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.MedicamentosTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.MedicamentosTable.Location = new System.Drawing.Point(12, 46);
+            this.MedicamentosTable.Name = "MedicamentosTable";
+            this.MedicamentosTable.RowTemplate.Height = 25;
+            this.MedicamentosTable.Size = new System.Drawing.Size(575, 302);
+            this.MedicamentosTable.TabIndex = 3;
+            this.MedicamentosTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TabelaMedicamentos_CellContentClick);
             // 
-            // panel1
+            // BotaoConsultar
             // 
-            this.panel1.Controls.Add(this.BotaoFechar);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(799, 92);
-            this.panel1.TabIndex = 12;
+            this.BotaoConsultar.BackColor = System.Drawing.Color.SteelBlue;
+            this.BotaoConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BotaoConsultar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BotaoConsultar.ForeColor = System.Drawing.Color.White;
+            this.BotaoConsultar.Location = new System.Drawing.Point(401, 3);
+            this.BotaoConsultar.Name = "BotaoConsultar";
+            this.BotaoConsultar.Size = new System.Drawing.Size(80, 39);
+            this.BotaoConsultar.TabIndex = 18;
+            this.BotaoConsultar.Text = "Consultar";
+            this.BotaoConsultar.UseVisualStyleBackColor = false;
+            this.BotaoConsultar.Click += new System.EventHandler(this.BotaoRegistrar_Click);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel5.Controls.Add(this.BotaoSelecionar);
+            this.panel5.Controls.Add(this.InserirMedicamento);
+            this.panel5.Controls.Add(this.BotaoConsultar);
+            this.panel5.Location = new System.Drawing.Point(12, 355);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(575, 45);
+            this.panel5.TabIndex = 19;
+            // 
+            // BotaoSelecionar
+            // 
+            this.BotaoSelecionar.BackColor = System.Drawing.Color.SteelBlue;
+            this.BotaoSelecionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BotaoSelecionar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BotaoSelecionar.ForeColor = System.Drawing.Color.White;
+            this.BotaoSelecionar.Location = new System.Drawing.Point(487, 3);
+            this.BotaoSelecionar.Name = "BotaoSelecionar";
+            this.BotaoSelecionar.Size = new System.Drawing.Size(85, 39);
+            this.BotaoSelecionar.TabIndex = 19;
+            this.BotaoSelecionar.Text = "Selecionar";
+            this.BotaoSelecionar.UseVisualStyleBackColor = false;
+            this.BotaoSelecionar.Click += new System.EventHandler(this.BotaoSelecionar_Click);
             // 
             // BotaoFechar
             // 
@@ -94,97 +114,45 @@
             this.BotaoFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BotaoFechar.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BotaoFechar.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.BotaoFechar.Location = new System.Drawing.Point(756, 4);
+            this.BotaoFechar.Location = new System.Drawing.Point(556, 0);
             this.BotaoFechar.Name = "BotaoFechar";
             this.BotaoFechar.Size = new System.Drawing.Size(40, 40);
-            this.BotaoFechar.TabIndex = 9;
+            this.BotaoFechar.TabIndex = 20;
             this.BotaoFechar.Text = "X";
             this.BotaoFechar.UseVisualStyleBackColor = true;
-            this.BotaoFechar.Click += new System.EventHandler(this.BotaoFechar_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel2.Controls.Add(this.TabelaMedicamentos);
-            this.panel2.Controls.Add(this.ConsultaMedicamento);
-            this.panel2.Controls.Add(this.InserirMedicamento);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(0, 90);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(799, 576);
-            this.panel2.TabIndex = 13;
-            // 
-            // TabelaMedicamentos
-            // 
-            this.TabelaMedicamentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TabelaMedicamentos.Location = new System.Drawing.Point(12, 198);
-            this.TabelaMedicamentos.Name = "TabelaMedicamentos";
-            this.TabelaMedicamentos.RowTemplate.Height = 25;
-            this.TabelaMedicamentos.Size = new System.Drawing.Size(776, 364);
-            this.TabelaMedicamentos.TabIndex = 3;
-            // 
-            // ConsultaMedicamento
-            // 
-            this.ConsultaMedicamento.BackColor = System.Drawing.Color.Red;
-            this.ConsultaMedicamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ConsultaMedicamento.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ConsultaMedicamento.Location = new System.Drawing.Point(261, 116);
-            this.ConsultaMedicamento.Name = "ConsultaMedicamento";
-            this.ConsultaMedicamento.Size = new System.Drawing.Size(344, 59);
-            this.ConsultaMedicamento.TabIndex = 2;
-            this.ConsultaMedicamento.Text = "Consultar";
-            this.ConsultaMedicamento.UseVisualStyleBackColor = false;
-            this.ConsultaMedicamento.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // InserirMedicamento
-            // 
-            this.InserirMedicamento.Location = new System.Drawing.Point(132, 87);
-            this.InserirMedicamento.Name = "InserirMedicamento";
-            this.InserirMedicamento.PlaceholderText = "                                     Inserir o nome do Medicamento ou deixe em br" +
-    "anco para consultar todos";
-            this.InserirMedicamento.Size = new System.Drawing.Size(610, 23);
-            this.InserirMedicamento.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(143, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(610, 58);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Consultar Medicamentos";
+            this.BotaoFechar.Click += new System.EventHandler(this.BotaoFechar_Click_1);
             // 
             // ConsultarMedicamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 664);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.ClientSize = new System.Drawing.Size(599, 412);
+            this.Controls.Add(this.BotaoFechar);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.MedicamentosTable);
+            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ConsultarMedicamento";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ConsultarMedicamento";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TabelaMedicamentos)).EndInit();
+            this.Load += new System.EventHandler(this.ConsultarMedicamento_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.MedicamentosTable)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private Label label7;
-        private Label label6;
-        private Label label2;
-        private Panel panel1;
-        private Button BotaoFechar;
-        private Panel panel2;
         private Label label1;
-        private DataGridView TabelaMedicamentos;
-        private Button ConsultaMedicamento;
         private TextBox InserirMedicamento;
+        private DataGridView MedicamentosTable;
+        private Button BotaoConsultar;
+        private Panel panel5;
+        private Button BotaoFechar;
+        private Button BotaoSelecionar;
     }
 }

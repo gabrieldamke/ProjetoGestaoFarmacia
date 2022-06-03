@@ -14,6 +14,7 @@ namespace ProjetoGestaoFarmacia
 {
     public partial class TelaPrincipal : Form
     {
+        int IDFarmacia;
         int UserID;
         SqlConnection connection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=DB_IdealFarma;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         public TelaPrincipal(int id)
@@ -26,6 +27,10 @@ namespace ProjetoGestaoFarmacia
             String ObterNomeQuery = "select farmaceutico_nome from [TB_FARMACEUTICO] where farmaceutico_id = '" +UserID + "' ";
             SqlCommand command = new SqlCommand(ObterNomeQuery, connection);
             string NomeUsuarioLogado = (string)command.ExecuteScalar();
+            String ObterIdFarmaciaQuery = "SELECT farmaceutico_farmacia FROM TB_FARMACEUTICO WHERE farmaceutico_id = '" + UserID + "' ";
+            SqlCommand commandRequestId = new SqlCommand(ObterIdFarmaciaQuery, connection);
+            int IdFarmacia = (int)commandRequestId.ExecuteScalar();
+            IDFarmacia = IdFarmacia;
             connection.Close();
             NomeDoUsuario.Text = NomeUsuarioLogado;
             ImprimirDadosFarmacia();
@@ -67,7 +72,7 @@ namespace ProjetoGestaoFarmacia
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ConsultarMedicamento Consulta = new ConsultarMedicamento();
+            ConsultarMedicamento Consulta = new ConsultarMedicamento(IDFarmacia);
             Hide();
             Consulta.ShowDialog();
         }
@@ -106,6 +111,12 @@ namespace ProjetoGestaoFarmacia
         private void DtAtual_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void ConsultarMedicamentos_Click(object sender, EventArgs e)
+        {
+            Medicamentos medicamentos = new Medicamentos(IDFarmacia);
+            medicamentos.ShowDialog();
         }
     }
 }

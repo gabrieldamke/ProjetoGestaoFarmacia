@@ -158,7 +158,7 @@ namespace ProjetoGestaoFarmacia
             {
                 this.Alert("Insira um CRF válido!", Form_Alert.enmType.Error);
             }
-            else if (!Regex.Match(InserirRG.Text, "[+-]?([0-9]*[.])?[0-9]+").Success)
+            else if (!Regex.Match(InserirSalario.Text, "[+-]?([0-9]*[.])?[0-9]+").Success)
             {
                 this.Alert("Insira um salário válido!", Form_Alert.enmType.Error);
             } else

@@ -19,6 +19,7 @@ namespace ProjetoGestaoFarmacia
         {
             InitializeComponent();
             FarmaciaID = FarmaciaId;
+            RetornarDadosFarmaceutico(FarmaciaID);
         }
 
         private void EditarDadosFarmacia_Load(object sender, EventArgs e)
@@ -40,15 +41,15 @@ namespace ProjetoGestaoFarmacia
             SqlCommand cmdGetTelefoneFarmacia = new SqlCommand(ObterTelefoneFarmaciaQuery, connection);
             InserirTelefone.Text = (string)cmdGetTelefoneFarmacia.ExecuteScalar();
             // Definir Endereço
-            String ObterEnderecoFarmaciaQuery = "select farmaceutico_endereco from [TB_FARMACEUTICO] where farmacia_id = '" + IDfarmacia + "' ";
+            String ObterEnderecoFarmaciaQuery = "select farmacia_endereco from [TB_FARMACIA] where farmacia_id = '" + IDfarmacia + "' ";
             SqlCommand cmdGetEnderecoFarmacia = new SqlCommand(ObterEnderecoFarmaciaQuery, connection);
             InserirEndereco.Text = (string)cmdGetEnderecoFarmacia.ExecuteScalar();
             // Definir CNPJ
-            String ObterCNPJFarmaciaQuery = "select farmacia_cnpj from [TB_FARMACIA] where farmaceutico_id = '" + IDfarmacia + "' ";
+            String ObterCNPJFarmaciaQuery = "select farmacia_cnpj from [TB_FARMACIA] where farmacia_id = '" + IDfarmacia + "' ";
             SqlCommand cmdGetCNPJFarmacia = new SqlCommand(ObterCNPJFarmaciaQuery, connection);
             InserirCNPJ.Text = (string)cmdGetCNPJFarmacia.ExecuteScalar();
             // Definir Razao social
-            String ObterRazaoSocialFarmaciaQuery = "select farmacia_razaoSocial from [TB_FARMACIA] where farmaceutico_id = '" + IDfarmacia + "' ";
+            String ObterRazaoSocialFarmaciaQuery = "select farmacia_razaoSocial from [TB_FARMACIA] where farmacia_id = '" + IDfarmacia + "' ";
             SqlCommand cmdGetEmailFarmaceutico = new SqlCommand(ObterRazaoSocialFarmaciaQuery, connection);
             InserirRazaoSocial.Text = (string)cmdGetEmailFarmaceutico.ExecuteScalar();
 
@@ -92,12 +93,25 @@ namespace ProjetoGestaoFarmacia
             }
             else
             {
+                try { 
                 connection.Open();
                 String UpdateFuncionarioQuery = "UPDATE TB_FARMACIA SET farmacia_nome = '" + InserirNome.Text + "', farmacia_telefone = '" + InserirTelefone.Text + "', farmacia_razaosocial = '" + InserirRazaoSocial.Text + "', farmacia_cnpj = '" + InserirCNPJ.Text + "', farmacia_endereco = '" + InserirEndereco.Text + "' WHERE farmacia_id = '" + FarmaciaID + "' ";
                 SqlCommand insCmd = new SqlCommand(UpdateFuncionarioQuery, connection);
                 insCmd.ExecuteNonQuery();
+                this.Alert("Alteração concluída!", Form_Alert.enmType.Success);
                 connection.Close();
+                    } catch 
+                {
+                    this.Alert("Erro ao Alterar!", Form_Alert.enmType.Error);
+                    this.Alert("Exceção gerada!", Form_Alert.enmType.Error);
+                }
+
             }
+        }
+
+        private void BotaoFechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

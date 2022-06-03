@@ -46,6 +46,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.InserirNome = new System.Windows.Forms.TextBox();
             this.BotaoConfirmar = new System.Windows.Forms.Button();
+            this.BotaoFechar = new System.Windows.Forms.Button();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panel3.SuspendLayout();
@@ -249,12 +250,28 @@
             this.BotaoConfirmar.UseVisualStyleBackColor = false;
             this.BotaoConfirmar.Click += new System.EventHandler(this.BotaoConfirmar_Click);
             // 
+            // BotaoFechar
+            // 
+            this.BotaoFechar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BotaoFechar.FlatAppearance.BorderSize = 0;
+            this.BotaoFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BotaoFechar.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BotaoFechar.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.BotaoFechar.Location = new System.Drawing.Point(525, 0);
+            this.BotaoFechar.Name = "BotaoFechar";
+            this.BotaoFechar.Size = new System.Drawing.Size(40, 40);
+            this.BotaoFechar.TabIndex = 32;
+            this.BotaoFechar.Text = "X";
+            this.BotaoFechar.UseVisualStyleBackColor = true;
+            this.BotaoFechar.Click += new System.EventHandler(this.BotaoFechar_Click);
+            // 
             // EditarDadosFarmacia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.ClientSize = new System.Drawing.Size(564, 383);
+            this.Controls.Add(this.BotaoFechar);
             this.Controls.Add(this.BotaoConfirmar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel5);
@@ -306,5 +323,6 @@
         private PictureBox pictureBox2;
         private TextBox InserirNome;
         private Button BotaoConfirmar;
+        private Button BotaoFechar;
     }
 }

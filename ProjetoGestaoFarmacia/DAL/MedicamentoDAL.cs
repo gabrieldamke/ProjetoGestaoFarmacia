@@ -21,12 +21,12 @@ namespace ProjetoGestaoFarmacia.DAL
             _sqlConnection.Open();
             SqlCommand command = _sqlConnection.CreateCommand();
             command.CommandText =
-                "insert into TB_FARMACEUTICO(medicamento_nome, medicamento_receitamedica, medicamento_valor, medicamento_dtvalidade, medicamento_quantidade) " +
-                "values(@farmaceutico_nome, @medicamento_receitamedica, @medicamento_valor, @medicamento_dtvalidade, @medicamento_quantidade)";
+                "insert into TB_MEDICAMENTO(medicamento_nome, medicamento_receitamedica, medicamento_valor, medicamento_descricao) " +
+                "values(@medicamento_nome, @medicamento_receitamedica, @medicamento_valor, @medicamento_descricao";
             command.Parameters.AddWithValue("@medicamento_nome", medicamento.nome);
-            command.Parameters.AddWithValue("@medicamento_receitamedica", medicamento.ReceitaMedica);
+            command.Parameters.AddWithValue("@medicamento_receitamedica", medicamento.receitamedica);
             command.Parameters.AddWithValue("@medicamento_valor", medicamento.valor);
-            command.Parameters.AddWithValue("@medicamento_dtvalidade", medicamento.DtValidade);
+            command.Parameters.AddWithValue("@medicamento_descricao", medicamento.descricao);
             command.ExecuteNonQuery();
             _sqlConnection.Close();
 

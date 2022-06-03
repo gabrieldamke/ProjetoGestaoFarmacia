@@ -35,9 +35,12 @@
             this.DadosFinanceiros = new System.Windows.Forms.Button();
             this.VerificarReceitas = new System.Windows.Forms.Button();
             this.ControleNF = new System.Windows.Forms.Button();
-            this.ConsultarMedicamentos = new System.Windows.Forms.Button();
+            this.Medicamentos = new System.Windows.Forms.Button();
             this.RealizarVenda = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.FarmaciaTelefone = new System.Windows.Forms.Label();
+            this.FarmaciaEndereco = new System.Windows.Forms.Label();
+            this.FarmaciaCNPJ = new System.Windows.Forms.Label();
             this.FarmaciaNome = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -51,9 +54,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.NomeDoUsuario = new System.Windows.Forms.Label();
-            this.FarmaciaCNPJ = new System.Windows.Forms.Label();
-            this.FarmaciaEndereco = new System.Windows.Forms.Label();
-            this.FarmaciaTelefone = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -66,8 +68,8 @@
             this.BotaoFechar.FlatAppearance.BorderSize = 0;
             this.BotaoFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BotaoFechar.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BotaoFechar.ForeColor = System.Drawing.Color.Black;
-            this.BotaoFechar.Location = new System.Drawing.Point(1311, 0);
+            this.BotaoFechar.ForeColor = System.Drawing.Color.AntiqueWhite;
+            this.BotaoFechar.Location = new System.Drawing.Point(1240, 4);
             this.BotaoFechar.Name = "BotaoFechar";
             this.BotaoFechar.Size = new System.Drawing.Size(40, 40);
             this.BotaoFechar.TabIndex = 8;
@@ -82,12 +84,12 @@
             this.panel1.Controls.Add(this.DadosFinanceiros);
             this.panel1.Controls.Add(this.VerificarReceitas);
             this.panel1.Controls.Add(this.ControleNF);
-            this.panel1.Controls.Add(this.ConsultarMedicamentos);
+            this.panel1.Controls.Add(this.Medicamentos);
             this.panel1.Controls.Add(this.RealizarVenda);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Location = new System.Drawing.Point(-1, 84);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1351, 648);
+            this.panel1.Size = new System.Drawing.Size(1280, 648);
             this.panel1.TabIndex = 9;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -160,22 +162,23 @@
             this.ControleNF.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ControleNF.UseVisualStyleBackColor = false;
             // 
-            // ConsultarMedicamentos
+            // Medicamentos
             // 
-            this.ConsultarMedicamentos.BackColor = System.Drawing.Color.SteelBlue;
-            this.ConsultarMedicamentos.FlatAppearance.BorderSize = 0;
-            this.ConsultarMedicamentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ConsultarMedicamentos.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ConsultarMedicamentos.ForeColor = System.Drawing.Color.White;
-            this.ConsultarMedicamentos.Image = ((System.Drawing.Image)(resources.GetObject("ConsultarMedicamentos.Image")));
-            this.ConsultarMedicamentos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ConsultarMedicamentos.Location = new System.Drawing.Point(331, 36);
-            this.ConsultarMedicamentos.Name = "ConsultarMedicamentos";
-            this.ConsultarMedicamentos.Size = new System.Drawing.Size(265, 116);
-            this.ConsultarMedicamentos.TabIndex = 9;
-            this.ConsultarMedicamentos.Text = "Consultar Medicamentos";
-            this.ConsultarMedicamentos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ConsultarMedicamentos.UseVisualStyleBackColor = false;
+            this.Medicamentos.BackColor = System.Drawing.Color.SteelBlue;
+            this.Medicamentos.FlatAppearance.BorderSize = 0;
+            this.Medicamentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Medicamentos.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Medicamentos.ForeColor = System.Drawing.Color.White;
+            this.Medicamentos.Image = ((System.Drawing.Image)(resources.GetObject("Medicamentos.Image")));
+            this.Medicamentos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Medicamentos.Location = new System.Drawing.Point(331, 36);
+            this.Medicamentos.Name = "Medicamentos";
+            this.Medicamentos.Size = new System.Drawing.Size(265, 116);
+            this.Medicamentos.TabIndex = 9;
+            this.Medicamentos.Text = "Medicamentos";
+            this.Medicamentos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Medicamentos.UseVisualStyleBackColor = false;
+            this.Medicamentos.Click += new System.EventHandler(this.ConsultarMedicamentos_Click);
             // 
             // RealizarVenda
             // 
@@ -207,17 +210,50 @@
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(883, 70);
+            this.panel3.Location = new System.Drawing.Point(680, 36);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(416, 197);
+            this.panel3.Size = new System.Drawing.Size(580, 257);
             this.panel3.TabIndex = 0;
+            // 
+            // FarmaciaTelefone
+            // 
+            this.FarmaciaTelefone.AutoSize = true;
+            this.FarmaciaTelefone.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FarmaciaTelefone.ForeColor = System.Drawing.Color.AntiqueWhite;
+            this.FarmaciaTelefone.Location = new System.Drawing.Point(93, 215);
+            this.FarmaciaTelefone.Name = "FarmaciaTelefone";
+            this.FarmaciaTelefone.Size = new System.Drawing.Size(40, 21);
+            this.FarmaciaTelefone.TabIndex = 12;
+            this.FarmaciaTelefone.Text = "Info";
+            // 
+            // FarmaciaEndereco
+            // 
+            this.FarmaciaEndereco.AutoSize = true;
+            this.FarmaciaEndereco.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FarmaciaEndereco.ForeColor = System.Drawing.Color.AntiqueWhite;
+            this.FarmaciaEndereco.Location = new System.Drawing.Point(98, 161);
+            this.FarmaciaEndereco.Name = "FarmaciaEndereco";
+            this.FarmaciaEndereco.Size = new System.Drawing.Size(40, 21);
+            this.FarmaciaEndereco.TabIndex = 11;
+            this.FarmaciaEndereco.Text = "Info";
+            // 
+            // FarmaciaCNPJ
+            // 
+            this.FarmaciaCNPJ.AutoSize = true;
+            this.FarmaciaCNPJ.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FarmaciaCNPJ.ForeColor = System.Drawing.Color.AntiqueWhite;
+            this.FarmaciaCNPJ.Location = new System.Drawing.Point(61, 105);
+            this.FarmaciaCNPJ.Name = "FarmaciaCNPJ";
+            this.FarmaciaCNPJ.Size = new System.Drawing.Size(40, 21);
+            this.FarmaciaCNPJ.TabIndex = 10;
+            this.FarmaciaCNPJ.Text = "Info";
             // 
             // FarmaciaNome
             // 
             this.FarmaciaNome.AutoSize = true;
             this.FarmaciaNome.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FarmaciaNome.ForeColor = System.Drawing.Color.AntiqueWhite;
-            this.FarmaciaNome.Location = new System.Drawing.Point(79, 48);
+            this.FarmaciaNome.Location = new System.Drawing.Point(70, 48);
             this.FarmaciaNome.Name = "FarmaciaNome";
             this.FarmaciaNome.Size = new System.Drawing.Size(40, 21);
             this.FarmaciaNome.TabIndex = 9;
@@ -228,7 +264,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.Color.AntiqueWhite;
-            this.label9.Location = new System.Drawing.Point(12, 153);
+            this.label9.Location = new System.Drawing.Point(12, 215);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(80, 21);
             this.label9.TabIndex = 8;
@@ -239,7 +275,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.Color.AntiqueWhite;
-            this.label8.Location = new System.Drawing.Point(12, 116);
+            this.label8.Location = new System.Drawing.Point(12, 161);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(89, 21);
             this.label8.TabIndex = 7;
@@ -250,7 +286,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.AntiqueWhite;
-            this.label5.Location = new System.Drawing.Point(12, 80);
+            this.label5.Location = new System.Drawing.Point(12, 105);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(56, 21);
             this.label5.TabIndex = 6;
@@ -272,7 +308,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.AntiqueWhite;
-            this.label3.Location = new System.Drawing.Point(93, 9);
+            this.label3.Location = new System.Drawing.Point(169, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(250, 24);
             this.label3.TabIndex = 4;
@@ -283,7 +319,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.label7.Location = new System.Drawing.Point(209, 72);
+            this.label7.Location = new System.Drawing.Point(209, 61);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(179, 24);
             this.label7.TabIndex = 6;
@@ -294,7 +330,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.label6.Location = new System.Drawing.Point(111, 48);
+            this.label6.Location = new System.Drawing.Point(111, 37);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(277, 24);
             this.label6.TabIndex = 5;
@@ -305,7 +341,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.AntiqueWhite;
-            this.label2.Location = new System.Drawing.Point(192, 9);
+            this.label2.Location = new System.Drawing.Point(192, 3);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(196, 39);
             this.label2.TabIndex = 3;
@@ -321,10 +357,12 @@
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.BotaoFechar);
             this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.label11);
+            this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(-1, -1);
+            this.panel2.Location = new System.Drawing.Point(-1, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1351, 101);
+            this.panel2.Size = new System.Drawing.Size(1290, 90);
             this.panel2.TabIndex = 10;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -332,7 +370,8 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(1103, 37);
+            this.label1.ForeColor = System.Drawing.Color.AntiqueWhite;
+            this.label1.Location = new System.Drawing.Point(1056, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 24);
             this.label1.TabIndex = 12;
@@ -341,7 +380,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ProjetoGestaoFarmacia.Properties.Resources.external_pharmacy_hospital_and_healthcare_xnimrodx_lineal_color_xnimrodx;
-            this.pictureBox1.Location = new System.Drawing.Point(13, 9);
+            this.pictureBox1.Location = new System.Drawing.Point(13, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(81, 81);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -353,51 +392,43 @@
             // 
             this.NomeDoUsuario.AutoSize = true;
             this.NomeDoUsuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.NomeDoUsuario.Location = new System.Drawing.Point(1103, 61);
+            this.NomeDoUsuario.ForeColor = System.Drawing.Color.AntiqueWhite;
+            this.NomeDoUsuario.Location = new System.Drawing.Point(1056, 61);
             this.NomeDoUsuario.Name = "NomeDoUsuario";
             this.NomeDoUsuario.Size = new System.Drawing.Size(141, 21);
             this.NomeDoUsuario.TabIndex = 10;
             this.NomeDoUsuario.Text = "Nome do usuario";
             this.NomeDoUsuario.Click += new System.EventHandler(this.NomeDoUsuario_Click);
             // 
-            // FarmaciaCNPJ
+            // label11
             // 
-            this.FarmaciaCNPJ.AutoSize = true;
-            this.FarmaciaCNPJ.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.FarmaciaCNPJ.ForeColor = System.Drawing.Color.AntiqueWhite;
-            this.FarmaciaCNPJ.Location = new System.Drawing.Point(74, 80);
-            this.FarmaciaCNPJ.Name = "FarmaciaCNPJ";
-            this.FarmaciaCNPJ.Size = new System.Drawing.Size(40, 21);
-            this.FarmaciaCNPJ.TabIndex = 10;
-            this.FarmaciaCNPJ.Text = "Info";
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label11.ForeColor = System.Drawing.Color.AntiqueWhite;
+            this.label11.Location = new System.Drawing.Point(192, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(196, 39);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "IdealFarma";
+            this.label11.Click += new System.EventHandler(this.label2_Click);
             // 
-            // FarmaciaEndereco
+            // label10
             // 
-            this.FarmaciaEndereco.AutoSize = true;
-            this.FarmaciaEndereco.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.FarmaciaEndereco.ForeColor = System.Drawing.Color.AntiqueWhite;
-            this.FarmaciaEndereco.Location = new System.Drawing.Point(107, 116);
-            this.FarmaciaEndereco.Name = "FarmaciaEndereco";
-            this.FarmaciaEndereco.Size = new System.Drawing.Size(40, 21);
-            this.FarmaciaEndereco.TabIndex = 11;
-            this.FarmaciaEndereco.Text = "Info";
-            // 
-            // FarmaciaTelefone
-            // 
-            this.FarmaciaTelefone.AutoSize = true;
-            this.FarmaciaTelefone.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.FarmaciaTelefone.ForeColor = System.Drawing.Color.AntiqueWhite;
-            this.FarmaciaTelefone.Location = new System.Drawing.Point(98, 153);
-            this.FarmaciaTelefone.Name = "FarmaciaTelefone";
-            this.FarmaciaTelefone.Size = new System.Drawing.Size(40, 21);
-            this.FarmaciaTelefone.TabIndex = 12;
-            this.FarmaciaTelefone.Text = "Info";
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label10.ForeColor = System.Drawing.Color.AntiqueWhite;
+            this.label10.Location = new System.Drawing.Point(192, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(196, 39);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "IdealFarma";
+            this.label10.Click += new System.EventHandler(this.label2_Click);
             // 
             // TelaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1350, 730);
+            this.ClientSize = new System.Drawing.Size(1280, 720);
             this.ControlBox = false;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -428,7 +459,7 @@
         private PictureBox pictureBox1;
         private Label label1;
         private Button RealizarVenda;
-        private Button ConsultarMedicamentos;
+        private Button Medicamentos;
         private Button Administrativo;
         private Button DadosFinanceiros;
         private Button VerificarReceitas;
@@ -442,5 +473,7 @@
         private Label FarmaciaTelefone;
         private Label FarmaciaEndereco;
         private Label FarmaciaCNPJ;
+        private Label label11;
+        private Label label10;
     }
 }
