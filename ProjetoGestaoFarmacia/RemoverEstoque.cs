@@ -11,38 +11,24 @@ using System.Windows.Forms;
 
 namespace ProjetoGestaoFarmacia
 {
-    public partial class AdicionarEstoque : Form
+    public partial class RemoverEstoque : Form
     {
         public int MedicamentoID;
         public int FarmaciaID;
-        public AdicionarEstoque(int MedicamentoId, int FarmaciaId)
+        public RemoverEstoque(int MedicamentoId, int FarmaciaId)
         {
             InitializeComponent();
             this.MedicamentoID = MedicamentoId;
             this.FarmaciaID = FarmaciaId;
-
         }
-
-        private void BotaoFechar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         public void Alert(string msg, Form_Alert.enmType type)
         {
             Form_Alert frm = new Form_Alert();
             frm.showAlert(msg, type);
         }
-        private void AdicionarEstoque_Load(object sender, EventArgs e)
+        private void BotaoFechar_Click(object sender, EventArgs e)
         {
-            
-
-            
+            this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -51,30 +37,38 @@ namespace ProjetoGestaoFarmacia
             connection.Open();
             int quantidade;
             bool isNumber = int.TryParse(InserirQuantidade.Text, out quantidade);
-            if(quantidade <= 0)
-            {
-                this.Alert("Quantidade Inválida!", Form_Alert.enmType.Error);
-            } else
             if (isNumber)
             {
-                try {
+                try
+                {
                     String ObterQuantidadeDeRemediosQuery = "SELECT medicamento_quantidade FROM TB_MEDICAMENTO WHERE medicamento_id = '" + MedicamentoID + "' and" + " medicamento_farmacia = '" + FarmaciaID + "' ";
                     SqlCommand commandRequestQuantidadeRemedio = new SqlCommand(ObterQuantidadeDeRemediosQuery, connection);
                     int QuantidadeFinal = (int)commandRequestQuantidadeRemedio.ExecuteScalar();
-                    QuantidadeFinal = QuantidadeFinal + quantidade;
-                    String UpdateQuantidadeQuery = "UPDATE TB_MEDICAMENTO SET medicamento_quantidade = '" + QuantidadeFinal + "' WHERE medicamento_id = '" + MedicamentoID + "' and" +" medicamento_farmacia = '" + FarmaciaID + "' " ;
-                SqlCommand insCmd = new SqlCommand(UpdateQuantidadeQuery, connection);
-                insCmd.ExecuteNonQuery();
-                    this.Alert("Quantidade adicionada!", Form_Alert.enmType.Success);
-                } catch (Exception)
+                    QuantidadeFinal = QuantidadeFinal - quantidade;
+                    if (QuantidadeFinal <0 || quantidade <= 0)
+                    {
+                        this.Alert("Quantidade inválida!", Form_Alert.enmType.Error);
+                    } else { 
+                    String UpdateQuantidadeQuery = "UPDATE TB_MEDICAMENTO SET medicamento_quantidade = '" + QuantidadeFinal + "' WHERE medicamento_id = '" + MedicamentoID + "' and" + " medicamento_farmacia = '" + FarmaciaID + "' ";
+                    SqlCommand insCmd = new SqlCommand(UpdateQuantidadeQuery, connection);
+                    insCmd.ExecuteNonQuery();
+                    this.Alert("Quantidade removida!", Form_Alert.enmType.Success);
+                    }
+                }
+                catch (Exception)
                 {
                     this.Alert("Erro ao adicionar!", Form_Alert.enmType.Error);
                     this.Alert("Exceção gerada!", Form_Alert.enmType.Error);
                 }
-            } else
+            }
+            else
             {
                 this.Alert("Insira um valor válido!", Form_Alert.enmType.Error);
             }
+        }
+
+        private void RemoverEstoque_Load(object sender, EventArgs e)
+        {
 
         }
     }

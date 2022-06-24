@@ -55,7 +55,7 @@ namespace ProjetoGestaoFarmacia
 
             SqlConnection connection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=DB_IdealFarma;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
             connection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT medicamento_id, medicamento_nome, medicamento_valor, medicamento_descricao FROM TB_MEDICAMENTO", connection);
+            SqlCommand cmd = new SqlCommand("SELECT medicamento_id, medicamento_nome, medicamento_valor, medicamento_descricao FROM TB_MEDICAMENTO where medicamento_farmacia  = '" + FarmaciaID + "' ", connection);
             SqlDataReader reader = cmd.ExecuteReader();
 
             dtMedicamentos.Load(reader);
@@ -78,7 +78,7 @@ namespace ProjetoGestaoFarmacia
 
             SqlConnection connection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=DB_IdealFarma;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
             connection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT medicamento_id, medicamento_nome, medicamento_valor, medicamento_descricao FROM TB_MEDICAMENTO where medicamento_nome = '" + InserirMedicamento.Text + "' ", connection);
+            SqlCommand cmd = new SqlCommand("SELECT medicamento_id, medicamento_nome, medicamento_valor, medicamento_descricao FROM TB_MEDICAMENTO where medicamento_nome = '" + InserirMedicamento.Text + "' and" + " medicamento_farmacia = '" + FarmaciaID + "' ", connection);
             SqlDataReader reader = cmd.ExecuteReader();
 
             dtMedicamentos.Load(reader);
@@ -94,7 +94,7 @@ namespace ProjetoGestaoFarmacia
 
         private void ConsultarMedicamento_Load(object sender, EventArgs e)
         {
-
+            MedicamentosTable.DataSource = GetAllMedicamentosList();
         }
 
         private void BotaoSelecionar_Click(object sender, EventArgs e)
@@ -117,7 +117,7 @@ namespace ProjetoGestaoFarmacia
                 try
                 {
                     connection.Open();
-                    String ObterIdRemedioQuery = "SELECT medicamento_id FROM TB_MEDICAMENTO WHERE medicamento_nome = '" + InserirMedicamento.Text + "' ";
+                    String ObterIdRemedioQuery = "SELECT medicamento_id FROM TB_MEDICAMENTO WHERE medicamento_nome = '" + InserirMedicamento.Text + "' and" + " medicamento_farmacia = '" + FarmaciaID + "' ";
                     SqlCommand commandRequestIdRemedio = new SqlCommand(ObterIdRemedioQuery, connection);
                     int IDRemedio = (int)commandRequestIdRemedio.ExecuteScalar();
                     DetalhesMedicamento detalhesMedicamento = new DetalhesMedicamento(IDRemedio, FarmaciaID);

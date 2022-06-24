@@ -64,20 +64,46 @@ namespace ProjetoGestaoFarmacia
             } else
             {
                 SqlConnection connection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=DB_IdealFarma;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
-                Medicamento medicamento = new Medicamento(InserirNome.Text, receita, Convert.ToSingle(InserirValor.Text), InserirDescricao.Text);
-                try { 
+               try { 
                 connection.Open();
-                String InserirRemedioQuery = "INSERT INTO TB_MEDICAMENTO(medicamento_nome, medicamento_receitamedica, medicamento_valor, medicamento_descricao) VALUES ('" + medicamento.nome + "', '" + medicamento.receitamedica + "', '" + medicamento.valor + "', '" + medicamento.descricao + "' )";
-                SqlCommand commandInserirRemedio = new SqlCommand(InserirRemedioQuery, connection);
-                commandInserirRemedio.ExecuteNonQuery();
-                connection.Close();
-                this.Alert("Medicamento adicionado!", Form_Alert.enmType.Success);
-                }  catch (Exception ex)
+                String VerificarRemedioExisteQuery = "SELECT * FROM TB_MEDICAMENTO WHERE medicamento_nome = '" + InserirNome.Text + "' and" + " medicamento_farmacia = '" + FarmaciaID + "' ";
+                SqlCommand commandVerificarRemedioExiste = new SqlCommand(VerificarRemedioExisteQuery, connection);
+                SqlDataReader reader = commandVerificarRemedioExiste.ExecuteReader();
+
+
+                if (reader.HasRows)
+                {
+                    this.Alert("Remédio já existe!", Form_Alert.enmType.Error);
+                    connection.Close();
+                }
+                else
+                {
+                    connection.Close();
+                    connection.Open();
+                    Medicamento medicamento = new Medicamento(InserirNome.Text, receita, Convert.ToSingle(InserirValor.Text), InserirDescricao.Text, FarmaciaID);
+                    try
+                    {
+                        String InserirRemedioQuery = "INSERT INTO TB_MEDICAMENTO(medicamento_nome, medicamento_receitamedica, medicamento_valor, medicamento_descricao, medicamento_farmacia) VALUES ('" + medicamento.nome + "', '" + medicamento.receitamedica + "', '" + medicamento.valor + "', '" + medicamento.descricao + "', '" + medicamento.farmacia + "')";
+                        SqlCommand commandInserirRemedio = new SqlCommand(InserirRemedioQuery, connection);
+                        commandInserirRemedio.ExecuteNonQuery();
+                        connection.Close();
+                        this.Alert("Medicamento adicionado!", Form_Alert.enmType.Success);
+                    }
+                    catch (Exception)
+                    {
+                        this.Alert("Exceção gerada", Form_Alert.enmType.Error);
+                        this.Alert("ERRO na conexão com DB!", Form_Alert.enmType.Error);
+                        connection.Close();
+                    }
+                  
+                }
+               } catch (Exception)
                 {
                     this.Alert("Exceção gerada", Form_Alert.enmType.Error);
-                    this.Alert("ERRO na conexão!", Form_Alert.enmType.Error);
-                } 
+                    this.Alert("Erro interno!", Form_Alert.enmType.Error);
 
+                }
+             
             }
 
                 

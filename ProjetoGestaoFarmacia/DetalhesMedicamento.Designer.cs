@@ -46,12 +46,6 @@
             this.NomeMedicamento = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.QuantidadeEstoque = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.AdicionarEstoque = new System.Windows.Forms.Button();
-            this.RemoverEstoque = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel5.SuspendLayout();
@@ -60,8 +54,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -250,89 +242,12 @@
             this.pictureBox7.TabIndex = 4;
             this.pictureBox7.TabStop = false;
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel3.Controls.Add(this.QuantidadeEstoque);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.pictureBox2);
-            this.panel3.Location = new System.Drawing.Point(33, 200);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(494, 45);
-            this.panel3.TabIndex = 38;
-            // 
-            // QuantidadeEstoque
-            // 
-            this.QuantidadeEstoque.AutoSize = true;
-            this.QuantidadeEstoque.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.QuantidadeEstoque.ForeColor = System.Drawing.Color.Black;
-            this.QuantidadeEstoque.Location = new System.Drawing.Point(250, 12);
-            this.QuantidadeEstoque.Name = "QuantidadeEstoque";
-            this.QuantidadeEstoque.Size = new System.Drawing.Size(40, 21);
-            this.QuantidadeEstoque.TabIndex = 44;
-            this.QuantidadeEstoque.Text = "Info";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(35, 12);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(209, 21);
-            this.label4.TabIndex = 44;
-            this.label4.Text = "Quantidade em estoque:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(10, 12);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // AdicionarEstoque
-            // 
-            this.AdicionarEstoque.BackColor = System.Drawing.Color.SteelBlue;
-            this.AdicionarEstoque.FlatAppearance.BorderSize = 0;
-            this.AdicionarEstoque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AdicionarEstoque.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.AdicionarEstoque.ForeColor = System.Drawing.Color.White;
-            this.AdicionarEstoque.Location = new System.Drawing.Point(33, 251);
-            this.AdicionarEstoque.Name = "AdicionarEstoque";
-            this.AdicionarEstoque.Size = new System.Drawing.Size(138, 51);
-            this.AdicionarEstoque.TabIndex = 40;
-            this.AdicionarEstoque.Text = "Adicionar ao Estoque";
-            this.AdicionarEstoque.UseVisualStyleBackColor = false;
-            this.AdicionarEstoque.Click += new System.EventHandler(this.AdicionarEstoque_Click);
-            // 
-            // RemoverEstoque
-            // 
-            this.RemoverEstoque.BackColor = System.Drawing.Color.Brown;
-            this.RemoverEstoque.FlatAppearance.BorderSize = 0;
-            this.RemoverEstoque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RemoverEstoque.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.RemoverEstoque.ForeColor = System.Drawing.Color.White;
-            this.RemoverEstoque.Location = new System.Drawing.Point(174, 251);
-            this.RemoverEstoque.Name = "RemoverEstoque";
-            this.RemoverEstoque.Size = new System.Drawing.Size(138, 51);
-            this.RemoverEstoque.TabIndex = 41;
-            this.RemoverEstoque.Text = "Remover do Estoque";
-            this.RemoverEstoque.UseVisualStyleBackColor = false;
-            // 
             // DetalhesMedicamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.ClientSize = new System.Drawing.Size(564, 344);
-            this.Controls.Add(this.RemoverEstoque);
-            this.Controls.Add(this.AdicionarEstoque);
-            this.Controls.Add(this.panel3);
+            this.ClientSize = new System.Drawing.Size(564, 228);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel9);
@@ -356,9 +271,6 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -378,16 +290,10 @@
         private Panel panel2;
         private Label label2;
         private PictureBox pictureBox7;
-        private Panel panel3;
-        private PictureBox pictureBox2;
         private Label DescricaoMedicamento;
         private Label label3;
         private Label ValorMedicamento;
         private Label label5;
         private Label NomeMedicamento;
-        private Label QuantidadeEstoque;
-        private Label label4;
-        private Button AdicionarEstoque;
-        private Button RemoverEstoque;
     }
 }

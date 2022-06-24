@@ -100,7 +100,7 @@
             this.InserirTelefone.MaxLength = 19;
             this.InserirTelefone.Name = "InserirTelefone";
             this.InserirTelefone.PlaceholderText = "Telefone";
-            this.InserirTelefone.Size = new System.Drawing.Size(143, 20);
+            this.InserirTelefone.Size = new System.Drawing.Size(465, 20);
             this.InserirTelefone.TabIndex = 5;
             // 
             // panel3
@@ -133,7 +133,7 @@
             this.InserirEndereco.MaxLength = 49;
             this.InserirEndereco.Name = "InserirEndereco";
             this.InserirEndereco.PlaceholderText = "Endereço";
-            this.InserirEndereco.Size = new System.Drawing.Size(298, 20);
+            this.InserirEndereco.Size = new System.Drawing.Size(458, 20);
             this.InserirEndereco.TabIndex = 5;
             // 
             // panel4
@@ -166,7 +166,7 @@
             this.InserirCNPJ.MaxLength = 30;
             this.InserirCNPJ.Name = "InserirCNPJ";
             this.InserirCNPJ.PlaceholderText = "O CNPJ da sua farmácia";
-            this.InserirCNPJ.Size = new System.Drawing.Size(323, 20);
+            this.InserirCNPJ.Size = new System.Drawing.Size(458, 20);
             this.InserirCNPJ.TabIndex = 5;
             // 
             // panel5
@@ -189,7 +189,7 @@
             this.InserirRazaoSocial.MaxLength = 50;
             this.InserirRazaoSocial.Name = "InserirRazaoSocial";
             this.InserirRazaoSocial.PlaceholderText = "A razão social da sua farmácia";
-            this.InserirRazaoSocial.Size = new System.Drawing.Size(323, 20);
+            this.InserirRazaoSocial.Size = new System.Drawing.Size(465, 20);
             this.InserirRazaoSocial.TabIndex = 8;
             // 
             // pictureBox4
@@ -232,7 +232,7 @@
             this.InserirNome.MaxLength = 50;
             this.InserirNome.Name = "InserirNome";
             this.InserirNome.PlaceholderText = "O nome da sua farmácia";
-            this.InserirNome.Size = new System.Drawing.Size(323, 20);
+            this.InserirNome.Size = new System.Drawing.Size(458, 20);
             this.InserirNome.TabIndex = 5;
             // 
             // BotaoConfirmar

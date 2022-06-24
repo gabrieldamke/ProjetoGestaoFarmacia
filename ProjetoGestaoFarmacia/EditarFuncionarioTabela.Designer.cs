@@ -65,6 +65,7 @@
             this.FuncionariosTable.RowTemplate.Height = 25;
             this.FuncionariosTable.Size = new System.Drawing.Size(540, 263);
             this.FuncionariosTable.TabIndex = 21;
+            this.FuncionariosTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.FuncionariosTable_CellContentClick);
             // 
             // label1
             // 

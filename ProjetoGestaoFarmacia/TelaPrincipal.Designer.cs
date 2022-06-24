@@ -34,7 +34,7 @@
             this.Administrativo = new System.Windows.Forms.Button();
             this.DadosFinanceiros = new System.Windows.Forms.Button();
             this.VerificarReceitas = new System.Windows.Forms.Button();
-            this.ControleNF = new System.Windows.Forms.Button();
+            this.Clientes = new System.Windows.Forms.Button();
             this.Medicamentos = new System.Windows.Forms.Button();
             this.RealizarVenda = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -83,7 +83,7 @@
             this.panel1.Controls.Add(this.Administrativo);
             this.panel1.Controls.Add(this.DadosFinanceiros);
             this.panel1.Controls.Add(this.VerificarReceitas);
-            this.panel1.Controls.Add(this.ControleNF);
+            this.panel1.Controls.Add(this.Clientes);
             this.panel1.Controls.Add(this.Medicamentos);
             this.panel1.Controls.Add(this.RealizarVenda);
             this.panel1.Controls.Add(this.panel3);
@@ -137,30 +137,32 @@
             this.VerificarReceitas.ForeColor = System.Drawing.Color.White;
             this.VerificarReceitas.Image = ((System.Drawing.Image)(resources.GetObject("VerificarReceitas.Image")));
             this.VerificarReceitas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.VerificarReceitas.Location = new System.Drawing.Point(331, 177);
+            this.VerificarReceitas.Location = new System.Drawing.Point(60, 177);
             this.VerificarReceitas.Name = "VerificarReceitas";
             this.VerificarReceitas.Size = new System.Drawing.Size(265, 116);
             this.VerificarReceitas.TabIndex = 11;
-            this.VerificarReceitas.Text = "Verificar receitas médicas";
+            this.VerificarReceitas.Text = "Estoque";
             this.VerificarReceitas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.VerificarReceitas.UseVisualStyleBackColor = false;
+            this.VerificarReceitas.Click += new System.EventHandler(this.VerificarReceitas_Click);
             // 
-            // ControleNF
+            // Clientes
             // 
-            this.ControleNF.BackColor = System.Drawing.Color.SteelBlue;
-            this.ControleNF.FlatAppearance.BorderSize = 0;
-            this.ControleNF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ControleNF.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ControleNF.ForeColor = System.Drawing.Color.White;
-            this.ControleNF.Image = ((System.Drawing.Image)(resources.GetObject("ControleNF.Image")));
-            this.ControleNF.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ControleNF.Location = new System.Drawing.Point(60, 177);
-            this.ControleNF.Name = "ControleNF";
-            this.ControleNF.Size = new System.Drawing.Size(265, 116);
-            this.ControleNF.TabIndex = 10;
-            this.ControleNF.Text = "Controle de NF/CF";
-            this.ControleNF.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ControleNF.UseVisualStyleBackColor = false;
+            this.Clientes.BackColor = System.Drawing.Color.SteelBlue;
+            this.Clientes.FlatAppearance.BorderSize = 0;
+            this.Clientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Clientes.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Clientes.ForeColor = System.Drawing.Color.White;
+            this.Clientes.Image = ((System.Drawing.Image)(resources.GetObject("Clientes.Image")));
+            this.Clientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Clientes.Location = new System.Drawing.Point(331, 177);
+            this.Clientes.Name = "Clientes";
+            this.Clientes.Size = new System.Drawing.Size(265, 116);
+            this.Clientes.TabIndex = 10;
+            this.Clientes.Text = "Clientes";
+            this.Clientes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Clientes.UseVisualStyleBackColor = false;
+            this.Clientes.Click += new System.EventHandler(this.Clientes_Click);
             // 
             // Medicamentos
             // 
@@ -463,7 +465,7 @@
         private Button Administrativo;
         private Button DadosFinanceiros;
         private Button VerificarReceitas;
-        private Button ControleNF;
+        private Button Clientes;
         private Label FarmaciaNome;
         private Label label9;
         private Label label8;

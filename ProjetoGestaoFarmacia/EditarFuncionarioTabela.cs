@@ -81,5 +81,10 @@ namespace ProjetoGestaoFarmacia
             }
 
         }
+
+        private void FuncionariosTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

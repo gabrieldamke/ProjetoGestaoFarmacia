@@ -76,7 +76,7 @@ namespace ProjetoGestaoFarmacia
             }
             // Definir Genero
             String ObterGeneroFarmaceuticoQuery = "select farmaceutico_genero from [TB_FARMACEUTICO] where farmaceutico_id = '" + FarmaceuticoId + "' ";
-            SqlCommand cmdGetGeneroFarmaceutico = new SqlCommand(ObterPISFarmaceuticoQuery, connection);
+            SqlCommand cmdGetGeneroFarmaceutico = new SqlCommand(ObterGeneroFarmaceuticoQuery, connection);
            String Genero = (string)cmdGetGeneroFarmaceutico.ExecuteScalar();
             if (Genero == "Masculino")
             {
@@ -119,6 +119,10 @@ namespace ProjetoGestaoFarmacia
              if (Masculino.Checked && Feminino.Checked)
             {
                 this.Alert("Escolha apenas um genêro!", Form_Alert.enmType.Error);
+            }
+            else if (!Masculino.Checked && !Feminino.Checked)
+            {
+                this.Alert("Escolha um genêro!", Form_Alert.enmType.Error);
             }
             else if (Masculino.Checked)
             {

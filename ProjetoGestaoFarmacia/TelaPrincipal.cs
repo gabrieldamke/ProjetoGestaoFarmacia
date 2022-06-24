@@ -98,7 +98,11 @@ namespace ProjetoGestaoFarmacia
 
         private void BotaoEntrar_Click(object sender, EventArgs e)
         {
-
+            RealizarVenda realizarVenda = new RealizarVenda(UserID, IDFarmacia);
+            realizarVenda.ShowDialog();
+            this.Close();
+            this.Hide();
+            this.Close();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -117,6 +121,18 @@ namespace ProjetoGestaoFarmacia
         {
             Medicamentos medicamentos = new Medicamentos(IDFarmacia);
             medicamentos.ShowDialog();
+        }
+
+        private void VerificarReceitas_Click(object sender, EventArgs e)
+        {
+            ConsultarEstoque consultarEstoque = new ConsultarEstoque(IDFarmacia);
+            consultarEstoque.ShowDialog();
+        }
+
+        private void Clientes_Click(object sender, EventArgs e)
+        {
+            Clientes clientes = new Clientes(IDFarmacia);
+            clientes.ShowDialog();
         }
     }
 }

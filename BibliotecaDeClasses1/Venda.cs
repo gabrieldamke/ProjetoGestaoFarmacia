@@ -12,13 +12,14 @@ namespace BibliotecaDeClasses1
         public float receita;
         public float lucro;
         public float ValorTotal;
-
-        public Venda(int id, float receita, float lucro, float valorTotal)
+        public int finalizada;
+        public Venda(int id, float receita, float lucro, float valorTotal, int finalizada)
         {
             this.id = id;
             this.receita = receita;
             this.lucro = lucro;
             ValorTotal = valorTotal;
+            this.finalizada = finalizada;
         }
     }
 }

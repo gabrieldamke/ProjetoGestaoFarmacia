@@ -134,5 +134,10 @@ namespace ProjetoGestaoFarmacia
             this.Alert("Pedro vai pega dp kkk", Form_Alert.enmType.Info);
 
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
