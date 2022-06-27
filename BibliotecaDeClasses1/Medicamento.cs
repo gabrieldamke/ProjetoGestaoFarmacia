@@ -12,7 +12,6 @@ public class Medicamento
         public int receitamedica { get; set; }
         public float valor { get; set; }
         public string descricao { get; set; } = "";
-
         public int farmacia { get; set; }
         public Medicamento( string nome, int receitaMedica, float valor, string Descricao)
         {

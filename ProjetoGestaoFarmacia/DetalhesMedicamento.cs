@@ -58,7 +58,7 @@ namespace ProjetoGestaoFarmacia
                 DescricaoMedicamento.Text = DescricaoRemedio;
                 string ObterValorRemedioQuery = "SELECT medicamento_valor FROM TB_MEDICAMENTO WHERE medicamento_id = '" + MedicamentoID + "' ";
                 SqlCommand commandRequestValorRemedio = new SqlCommand(ObterValorRemedioQuery, connection);
-                double ValorRemedio = (double)commandRequestValorRemedio.ExecuteScalar();
+                decimal ValorRemedio = (decimal)commandRequestValorRemedio.ExecuteScalar();
                 ValorMedicamento.Text = ValorRemedio.ToString();
                 string ObterReceitaRemedioQuery = "SELECT medicamento_receitamedica FROM TB_MEDICAMENTO WHERE medicamento_id = '" + MedicamentoID + "' ";
                 SqlCommand commandRequestReceitaRemedio = new SqlCommand(ObterReceitaRemedioQuery, connection);

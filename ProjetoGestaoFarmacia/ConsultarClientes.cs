@@ -41,7 +41,7 @@ namespace ProjetoGestaoFarmacia
             connection.Open();
             try
             {
-                SqlCommand cmd = new SqlCommand("SELECT cliente_id, cliente_nome, cliente_telefone, cliente_rg FROM TB_CLIENTE where cliente_farmacia = '" + FarmaciaID + "' ", connection);
+                SqlCommand cmd = new SqlCommand("SELECT cliente_id, cliente_nome, cliente_email FROM TB_CLIENTE where cliente_farmacia = '" + FarmaciaID + "' ", connection);
                 SqlDataReader reader = cmd.ExecuteReader();
 
                 dtClientes.Load(reader);
@@ -79,6 +79,7 @@ namespace ProjetoGestaoFarmacia
             {
                 this.Alert("Erro ao inicializar", Form_Alert.enmType.Error);
             }
+            GetClientesList();
         }
 
         private void BotaoConsultar_Click(object sender, EventArgs e)

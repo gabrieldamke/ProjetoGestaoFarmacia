@@ -56,6 +56,7 @@
             this.NomeDoUsuario = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -203,6 +204,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.FarmaciaTelefone);
             this.panel3.Controls.Add(this.FarmaciaEndereco);
             this.panel3.Controls.Add(this.FarmaciaCNPJ);
@@ -426,6 +428,22 @@
             this.label10.Text = "IdealFarma";
             this.label10.Click += new System.EventHandler(this.label2_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.SteelBlue;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(538, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(42, 39);
+            this.button1.TabIndex = 14;
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // TelaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -477,5 +495,6 @@
         private Label FarmaciaCNPJ;
         private Label label11;
         private Label label10;
+        private Button button1;
     }
 }

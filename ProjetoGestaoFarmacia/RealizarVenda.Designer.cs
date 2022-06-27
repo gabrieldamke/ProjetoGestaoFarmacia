@@ -38,11 +38,11 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.InsertIdMedicamento = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.TabelaProduto = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
             this.LblVendID = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.InserirQuantidade = new System.Windows.Forms.TextBox();
+            this.InserirCliente = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.NomeOperador = new System.Windows.Forms.Label();
@@ -53,6 +53,8 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.ValorFinal = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -71,7 +73,7 @@
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TabelaProduto)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -88,7 +90,7 @@
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.TabelaProduto);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.label9);
@@ -195,14 +197,15 @@
             this.label8.TabIndex = 47;
             this.label8.Text = "Medicamento:";
             // 
-            // dataGridView1
+            // TabelaProduto
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(245, 179);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(996, 346);
-            this.dataGridView1.TabIndex = 46;
+            this.TabelaProduto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.TabelaProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TabelaProduto.Location = new System.Drawing.Point(236, 179);
+            this.TabelaProduto.Name = "TabelaProduto";
+            this.TabelaProduto.RowTemplate.Height = 25;
+            this.TabelaProduto.Size = new System.Drawing.Size(996, 346);
+            this.TabelaProduto.TabIndex = 46;
             // 
             // panel4
             // 
@@ -228,24 +231,24 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.LightGray;
-            this.panel6.Controls.Add(this.InserirQuantidade);
+            this.panel6.Controls.Add(this.InserirCliente);
             this.panel6.Location = new System.Drawing.Point(245, 95);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(506, 33);
             this.panel6.TabIndex = 43;
             this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
-            // InserirQuantidade
+            // InserirCliente
             // 
-            this.InserirQuantidade.BackColor = System.Drawing.Color.LightGray;
-            this.InserirQuantidade.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.InserirQuantidade.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.InserirQuantidade.ForeColor = System.Drawing.Color.Red;
-            this.InserirQuantidade.Location = new System.Drawing.Point(3, 6);
-            this.InserirQuantidade.Name = "InserirQuantidade";
-            this.InserirQuantidade.PlaceholderText = "Digite o ID do cliente ou deixe em branco para não identificar";
-            this.InserirQuantidade.Size = new System.Drawing.Size(500, 20);
-            this.InserirQuantidade.TabIndex = 8;
+            this.InserirCliente.BackColor = System.Drawing.Color.LightGray;
+            this.InserirCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.InserirCliente.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.InserirCliente.ForeColor = System.Drawing.Color.Red;
+            this.InserirCliente.Location = new System.Drawing.Point(3, 6);
+            this.InserirCliente.Name = "InserirCliente";
+            this.InserirCliente.PlaceholderText = "Digite o ID do cliente ou deixe em branco para não identificar";
+            this.InserirCliente.Size = new System.Drawing.Size(500, 20);
+            this.InserirCliente.TabIndex = 8;
             // 
             // label9
             // 
@@ -370,6 +373,8 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel3.Controls.Add(this.ValorFinal);
+            this.panel3.Controls.Add(this.label15);
             this.panel3.Controls.Add(this.button7);
             this.panel3.Controls.Add(this.button6);
             this.panel3.Controls.Add(this.button5);
@@ -377,6 +382,28 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1280, 85);
             this.panel3.TabIndex = 10;
+            // 
+            // ValorFinal
+            // 
+            this.ValorFinal.AutoSize = true;
+            this.ValorFinal.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ValorFinal.ForeColor = System.Drawing.Color.AntiqueWhite;
+            this.ValorFinal.Location = new System.Drawing.Point(789, 25);
+            this.ValorFinal.Name = "ValorFinal";
+            this.ValorFinal.Size = new System.Drawing.Size(80, 39);
+            this.ValorFinal.TabIndex = 49;
+            this.ValorFinal.Text = "0.00";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label15.ForeColor = System.Drawing.Color.AntiqueWhite;
+            this.label15.Location = new System.Drawing.Point(560, 25);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(235, 39);
+            this.label15.TabIndex = 48;
+            this.label15.Text = "Valor Total: R$";
             // 
             // button7
             // 
@@ -394,6 +421,7 @@
             this.button7.Text = "Vender";
             this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button6
             // 
@@ -596,12 +624,13 @@
             this.panel7.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TabelaProduto)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -636,9 +665,9 @@
         private Panel panel4;
         private TextBox LblVendID;
         private Panel panel6;
-        private TextBox InserirQuantidade;
+        private TextBox InserirCliente;
         private Button button5;
-        private DataGridView dataGridView1;
+        private DataGridView TabelaProduto;
         private Panel panel7;
         private TextBox InserirQtd;
         private Label label13;
@@ -649,5 +678,7 @@
         private Button button6;
         private Label VendaIDLbl;
         private Label label14;
+        private Label ValorFinal;
+        private Label label15;
     }
 }

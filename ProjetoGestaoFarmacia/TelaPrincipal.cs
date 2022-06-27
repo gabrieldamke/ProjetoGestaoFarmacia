@@ -100,9 +100,7 @@ namespace ProjetoGestaoFarmacia
         {
             RealizarVenda realizarVenda = new RealizarVenda(UserID, IDFarmacia);
             realizarVenda.ShowDialog();
-            this.Close();
-            this.Hide();
-            this.Close();
+
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -133,6 +131,21 @@ namespace ProjetoGestaoFarmacia
         {
             Clientes clientes = new Clientes(IDFarmacia);
             clientes.ShowDialog();
+        }
+
+        public void Alert(string msg, Form_Alert.enmType type)
+        {
+            Form_Alert frm = new Form_Alert();
+            frm.showAlert(msg, type);
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try { 
+            ImprimirDadosFarmacia();
+            } catch (Exception)
+            {
+                this.Alert("Erro ao Atualizar dados!", Form_Alert.enmType.Error);
+            }
         }
     }
 }
