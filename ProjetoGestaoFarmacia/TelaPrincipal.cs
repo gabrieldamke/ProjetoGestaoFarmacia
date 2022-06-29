@@ -147,5 +147,11 @@ namespace ProjetoGestaoFarmacia
                 this.Alert("Erro ao Atualizar dados!", Form_Alert.enmType.Error);
             }
         }
+
+        private void DadosFinanceiros_Click(object sender, EventArgs e)
+        {
+            DadosFinanceiros dados = new DadosFinanceiros(IDFarmacia);
+            dados.ShowDialog();
+        }
     }
 }

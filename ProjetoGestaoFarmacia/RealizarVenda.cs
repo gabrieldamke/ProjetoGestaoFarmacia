@@ -27,7 +27,9 @@ namespace ProjetoGestaoFarmacia
         void NovaVenda()
         {
             connection.Open();
-            String CriarNovaVendaQuery = "INSERT INTO TB_VENDA (venda_farmacia, venda_farmaceutico) VALUES('" + FarmaciaID + "', '" + FarmaceuticoID + "')";
+            string venda_finalizada = "0";
+            string venda_cliente = "0";
+            String CriarNovaVendaQuery = "INSERT INTO TB_VENDA (venda_farmacia, venda_farmaceutico, venda_finalizada, venda_cliente) VALUES('" + FarmaciaID + "', '" + FarmaceuticoID + "', '" + venda_finalizada + "', '" + venda_cliente + "')";
             SqlCommand CreateNewVenda = new SqlCommand(CriarNovaVendaQuery, connection);
             String CriarNovaVenda = (string)CreateNewVenda.ExecuteScalar();
             String ObterIdVendaAtual = "SELECT SCOPE_IDENTITY() from TB_VENDA ";
@@ -83,7 +85,7 @@ namespace ProjetoGestaoFarmacia
             if (reader.HasRows)
             {
                 try
-                {
+                { 
                     connection.Close();
                     connection.Open();
                     String ObterQuantidadeAtual = "select itemvenda_quantidade from [TB_ITEMVENDA] where itemvenda_medicamento = '" + InsertIdMedicamento.Text + "' and itemvenda_venda = '" + LblID + "' ";
@@ -117,14 +119,14 @@ namespace ProjetoGestaoFarmacia
                     this.Alert("Erro ao atualizar qtd!", Form_Alert.enmType.Error);
                     this.Alert("Exceção gerada!", Form_Alert.enmType.Error);
                     connection.Close();
-                }
+                } 
             }
 
             else if (InserirQtd != null && InsertQTD != 0)
             {
                 try
                 {
-
+               
                     connection.Close();
                     connection.Open();
                     String CriarNovaItemVendaQuery = "INSERT INTO TB_ITEMVENDA (itemvenda_venda, itemvenda_medicamento, itemvenda_quantidade) VALUES('" + LblID + "', '" + InsertMED + "', '" + InsertQTD + "')";
@@ -154,7 +156,7 @@ namespace ProjetoGestaoFarmacia
                     this.Alert("Erro ao add produto!", Form_Alert.enmType.Error);
                     this.Alert("Exceção gerada!", Form_Alert.enmType.Error);
                     connection.Close();
-                }
+                } 
             }
             else
             {
@@ -232,10 +234,10 @@ namespace ProjetoGestaoFarmacia
 
         private void button7_Click(object sender, EventArgs e)
         {
-            try
-            {
+           /* try
+            { */
                 connection.Open();
-
+            
                 if (InserirCliente.Text != "")
                 {
                     String FinalizarVendaQuery = "UPDATE TB_VENDA SET venda_cliente = @venda_cliente, venda_finalizada = @venda_finalizada where venda_id = @venda_id";
@@ -251,22 +253,23 @@ namespace ProjetoGestaoFarmacia
                     this.Close();
                 } else
                 {
-                   
-                    string vendafinalizada = "1";
+                int venda = int.Parse(LblVendID.Text);
+                string vendafinalizada = "1";
                     String VendaFinalizadaQuery = "UPDATE TB_VENDA SET venda_finalizada = '" + vendafinalizada  + "' where venda_id = @venda_id";
                     SqlCommand cmdVendaFinalizada = new SqlCommand(VendaFinalizadaQuery, connection);
                     cmdVendaFinalizada.Parameters.Add(new SqlParameter("@venda_finalizada", vendafinalizada));
-                    cmdVendaFinalizada.ExecuteNonQuery();
+                cmdVendaFinalizada.Parameters.Add(new SqlParameter("@venda_id", venda));
+                cmdVendaFinalizada.ExecuteNonQuery();
                     this.Alert("Venda Concluída!", Form_Alert.enmType.Success);
                     connection.Close();
                     this.Close();
                 }
-            }
+          /*  }
             catch (Exception)
             {
                 this.Alert("Erro ao Finalizar Venda!", Form_Alert.enmType.Error);
                 this.Alert("Exceção gerada!", Form_Alert.enmType.Error);
-            } 
+            } */
             }
         }
     }

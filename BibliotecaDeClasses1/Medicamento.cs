@@ -12,6 +12,8 @@ public class Medicamento
         public int receitamedica { get; set; }
         public float valor { get; set; }
         public string descricao { get; set; } = "";
+
+        public int quantidade { get; set; }
         public int farmacia { get; set; }
         public Medicamento( string nome, int receitaMedica, float valor, string Descricao)
         {
@@ -41,5 +43,16 @@ public class Medicamento
             return medicamento;
         }
 
+        public Medicamento ReduzirEstoque(Medicamento medicamento, int quantidade)
+        {
+            medicamento.quantidade= medicamento.quantidade - quantidade;
+            return medicamento;
+        }
+        public Medicamento AumentarEstoque(Medicamento medicamento, int quantidade)
+        {
+            medicamento.quantidade = medicamento.quantidade + quantidade;
+            return medicamento;
+        }
+        
     }
 }

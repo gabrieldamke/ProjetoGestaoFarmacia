@@ -30,5 +30,10 @@ namespace BibliotecaDeClasses1
             this.email = email;
             this.farmacia = farmacia;
         }
+
+        public Cliente()
+        {
+
+        }
     }
 }

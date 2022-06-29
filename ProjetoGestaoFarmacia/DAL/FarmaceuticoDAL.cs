@@ -59,27 +59,7 @@ namespace ProjetoGestaoFarmacia.DAL
 
         }
 
-        /*
-        public Farmaceutico ObterPorID(int id)
-        {
-            Farmaceutico farmaceutico = new Farmaceutico();
-            var command = new SqlCommand("select * from TB_FARMACEUTICO where farmaceutico_id = @id", _sqlConnection);
-            command.Parameters.AddWithValue("@id", id);
-            _sqlConnection.Open();
-            using (SqlDataReader reader = command.ExecuteReader())
-            {
-                while (reader.Read())
-                {
-                    farmaceutico.id = rea;
-                    farmaceutico.nome = reader["farmaceutico_nome"].ToString();
-                    //farmaceutico = new Farmaceutico(id.ToString(), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetFloat(6), reader.GetString(7), reader.GetString(8), reader.GetString(9), reader.GetString(10));
-             
-                }
-                _sqlConnection.Close();
-                return farmaceutico;
-            }
-        }
-        */
+
     }
         
 }
